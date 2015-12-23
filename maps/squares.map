@@ -1,0 +1,8 @@
+patch-of Western : 20 20 70 20 70 70 20 70
+patch-of Eastern : 120 20 170 20 170 70 120 70
+patch-of Southern : 90 150 140 150 140 200 90 200
+capital-of Western : 45 45
+capital-of Eastern : 145 45
+capital-of Southern : 115 175
+neighbors-of Western : Eastern
+neighbors-of Eastern : Southern

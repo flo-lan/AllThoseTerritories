@@ -1,0 +1,49 @@
+patch-of Western America 20 20 70 20 70 70 20 70
+patch-of Eastern America 120 20 170 20 170 70 120 70
+patch-of Southern America 90 150 140 150 140 200 90 200
+capital-of Western America 45 45
+capital-of Eastern America 145 45
+capital-of Southern America 115 175
+neighbors-of Western America : Eastern America
+neighbors-of Eastern America : Southern America
+
+patch-of Greenland 500 75 550 75 550 125 500 125
+capital-of Greenland 525 100
+
+patch-of West North Center 560 150 610 150 610 200 560 200
+patch-of East North Center 700 150 750 150 750 200 700 200
+neighbors-of West North Center : East North Center
+
+patch-of West South Center 500 320 550 320 550 370 500 370
+patch-of West South Center 560 320 610 320 610 370 560 370
+
+patch-of East South Center 700 320 750 320 750 370 700 370
+patch-of East South Center 760 320 810 320 810 370 760 370
+
+neighbors-of Greenland : West North Center - East North Center - Eastern America
+
+neighbors-of West South Center : East South Center
+neighbors-of West South Center : West North Center
+neighbors-of East South Center : East North Center
+
+capital-of West North Center 585 175
+capital-of East North Center 725 175
+capital-of West South Center 585 345
+capital-of East South Center 725 345
+
+
+patch-of Island A 1050 100 1100 100 1100 150 1050 150
+patch-of Island B 1000 225 1050 225 1050 275 1000 275
+patch-of Island C 1150 260 1200 260 1200 310 1150 310
+
+capital-of Island A 1075 125
+capital-of Island B 1025 250
+capital-of Island C 1175 285
+
+neighbors-of Island B : Island A - Island C
+neighbors-of Island B : East North Center
+
+continent America 3 : Western America - Eastern America - Southern America
+continent Center 5 : West North Center - East North Center - West South Center - East South Center
+continent Island 4 : Island A - Island B - Island C
+continent Greenland 2 : Greenland
