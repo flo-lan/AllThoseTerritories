@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Florian Langeder on 23.12.15.
@@ -14,17 +15,13 @@ public class GameBoard {
         territories = loader.getTerritories();
         continents = loader.getContinents();
 
-        for(String s : territories.keySet()) {
-            System.out.println(s);
+        for(Map.Entry<String, Territory> entry : territories.entrySet()) {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue().toString());
         }
-        for(Territory t : territories.values()) {
-            System.out.println(t.toString());
-        }
-        for(String s : continents.keySet()) {
-            System.out.println(s);
-        }
-        for(Continent c : continents.values()) {
-            System.out.println(c.toString());
+        for(Map.Entry<String, Continent> entry : continents.entrySet()) {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue().toString());
         }
     }
 }

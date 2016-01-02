@@ -104,15 +104,19 @@ public class MapLoader {
     }
 
     public void addNeighbors(String neighborData) {
-        //TODO
+        String terrName = getAffectedRegion(neighborData);
+        String[] territoryList = getTerritoryList(neighborData);
+        Territory terr = territories.get(terrName);
+        for(String s : territoryList) {
+            terr.addNeighbor(s);
+        }
     }
 
     public void addContinent(String continentData) {
-        //TODO
         String continentName = getAffectedRegion(continentData);
         int unitBoost = getContinentUnitBoost(continentData);
-        String[] territories = getTerritoriesFromContinent(continentData);
-        continents.put(continentName, new Continent(territories, unitBoost));
+        String[] territoryList = getTerritoryList(continentData);
+        continents.put(continentName, new Continent(territoryList, unitBoost));
     }
 
     public int getContinentUnitBoost(String line) {
@@ -125,7 +129,7 @@ public class MapLoader {
         return 0;
     }
 
-    public String[] getTerritoriesFromContinent(String line) {
+    public String[] getTerritoryList(String line) {
         ArrayList<String> territories = new ArrayList<>();
         String[] stringData = line.split(": ");
         return stringData[1].split(" - ");
