@@ -9,7 +9,13 @@ public class GameBoard {
 
     public GameBoard() {
         GameBoardFrame boardFrame = new GameBoardFrame();
-        MapLoader loader = new MapLoader("squares.map");
+        MapLoader loader = new MapLoader("africa.map");
         territories = loader.getTerritories();
+        for(String s : territories.keySet()) {
+            System.out.println(s);
+        }
+        for(Territory t : territories.values()) {
+            System.out.println(t.toString());
+        }
     }
 }

@@ -1,7 +1,13 @@
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.IllegalFormatException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Florian Langeder on 23.12.15.
@@ -9,6 +15,7 @@ import java.util.HashMap;
 public class MapLoader {
 
     private HashMap<String, Territory> territories = new HashMap<>();
+    private HashMap<String, Continent> continents = new HashMap<>();
 
     public MapLoader(String mapFile) {
         readFile(mapFile);
@@ -16,6 +23,10 @@ public class MapLoader {
 
     public HashMap<String, Territory> getTerritories() {
         return territories;
+    }
+
+    public HashMap<String, Continent> getContinents() {
+        return continents;
     }
 
     private void readFile(String mapFile) {
@@ -45,15 +56,16 @@ public class MapLoader {
             case "neighbors-of":
                 addNeighbors(stringData[1]);
                 break;
+            case "continent":
+                addContinent(stringData[1]);
             default:
-                System.out.println("Corrupt data");
                 break;
         }
     }
 
     public void addPatch(String patchData) {
         String terrName = getAffectedRegion(patchData);
-        int[] coordinates = getCoordinates(patchData);
+        ArrayList<Point> coordinates = getCoordinates(patchData);
 
         Territory terr;
 
@@ -69,26 +81,26 @@ public class MapLoader {
         }
     }
 
-    public void addPatches(Territory terr, int[] coordinates) {
-        for(int i = 0; i < coordinates.length; i += 2) {
-            terr.addPatch(coordinates[i], coordinates[i+1]);
+    public void addPatches(Territory terr, ArrayList<Point> coordinates) {
+        for(Point p : coordinates) {
+            terr.addPatch(p);
         }
     }
 
     public void addCapital(String capitalData) {
         String terrName = getAffectedRegion(capitalData);
-        int[] coordinates = getCoordinates(capitalData);
+        ArrayList<Point> coordinates = getCoordinates(capitalData);
 
         Territory terr;
 
         //Territory already exists
         if(territories.containsKey(terrName)) {
             terr = territories.get(terrName);
-            terr.setCapital(coordinates[0], coordinates[1]);
+            terr.setCapital(coordinates.get(0));
 
         } else {
             terr = new Territory();
-            terr.setCapital(coordinates[0], coordinates[1]);
+            terr.setCapital(coordinates.get(0));
             territories.put(terrName, terr);
         }
     }
@@ -97,47 +109,43 @@ public class MapLoader {
         //TODO
     }
 
-    public String getAffectedRegion(String line) {
-        String[] stringData = line.split(" : ");
-        return stringData[0];
+    public void addContinent(String continentData) {
+        //TODO
     }
 
-    public int[] getCoordinates(String line) {
-        String[] stringData = line.split(" : ");
-        String[] stringCoordinates = stringData[1].split(" ");
+    //Gets region to which attributes are assigned to
+    //Region begins after first space of a line and ends at either " :" or a number
+    public String getAffectedRegion(String line) {
+        //Check for words with spaces(no numbers or special characters allowed)
+        Matcher match = Pattern.compile("[a-zA-Z ]+").matcher(line);
+        while (match.find()) {
+            //return first result
+            return match.group();
+        }
+        throw new IllegalArgumentException();
+    }
 
-        //convert StringArray to IntArray
-        int[] coordinates = new int[stringCoordinates.length];
-        for(int i = 0; i < coordinates.length; i++) {
-            coordinates[i] = Integer.parseInt(stringCoordinates[i]);
+    public ArrayList<Point> getCoordinates(String line) {
+        String[] stringData = line.split(" ");
+
+        ArrayList<Point> coordinates = new ArrayList<>();
+
+        for(int i = 0; i < stringData.length; i++) {
+            if(isNumber(stringData[i]) && isNumber(stringData[i+1])) {
+                coordinates.add(new Point(Integer.parseInt(stringData[i]),
+                                Integer.parseInt(stringData[i+1])));
+                i++; //jump over next index
+            }
         }
         return coordinates;
     }
 
-    /* OLD METHOD BEFORE ":" sperations
-    //Get Territory Name From File-line(can be separated by more than one space)
-    public String getTerritoryFromData(String line) {
-        String terr = "";
-        String[] stringData = line.split(" ");
-        //Regex for Name detection
-        Pattern p = Pattern.compile("[a-zA-Z]");
-        Matcher m;
-        for(int i = 0; i < stringData.length; i++) {
-            //First Element of line must be a territory
-            //Add first one without space.
-            if(i == 0) {
-                terr += stringData[i];
-            } else {
-                m = p.matcher(stringData[i]);
-                if(m.find()) {
-                    //String contains part of territory name
-                    terr += " " + stringData[i];
-                } else {
-                    //Territory name ended
-                    break;
-                }
-            }
+    public static boolean isNumber(String string) {
+        try {
+            Integer.parseInt(string);
+        } catch (Exception e) {
+            return false;
         }
-        return terr;
-    }*/
+        return true;
+    }
 }

@@ -13,19 +13,19 @@ public class Territory {
 
     }
 
-    public void addPatch(int x, int y) {
-        patches.add(new Point(x, y));
+    public void addPatch(Point p) {
+        patches.add(p);
     }
 
-    public void setCapital(int x, int y) {
-        capital.setLocation(x, y);
+    public void setCapital(Point p) {
+        capital = p;
     }
 
     public String toString() {
         String s = "";
         s += "Capital: " + capital.toString() + "\n";
         for(Point p : patches) {
-            s += p.toString() + "\n";
+            s += "Patch: " + p.toString() + "\n";
         }
         return s;
     }
