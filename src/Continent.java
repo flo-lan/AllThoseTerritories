@@ -1,14 +1,22 @@
-import java.util.HashMap;
-
 /**
- * Created by flo on 23.12.15.
+ * Created by Florian Langeder on 23.12.15.
  */
 public class Continent {
 
+    private String[] territories;
     private int unitBoost;
-    private HashMap<String, Territory> territories = new HashMap<>();
 
-    public Continent() {
+    public Continent(String[] territories, int unitBoost) {
+        this.territories = territories;
+        this.unitBoost = unitBoost;
+    }
 
+    public String toString() {
+        String s = "";
+        s += "UnitBoost: " + unitBoost + "\n";
+        for(String t : territories) {
+            s += "Terr: " + t + "\n";
+        }
+        return s;
     }
 }

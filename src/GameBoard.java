@@ -6,16 +6,25 @@ import java.util.HashMap;
 public class GameBoard {
 
     private HashMap<String, Territory> territories;
+    private HashMap<String, Continent> continents;
 
     public GameBoard() {
         GameBoardFrame boardFrame = new GameBoardFrame();
-        MapLoader loader = new MapLoader("africa.map");
+        MapLoader loader = new MapLoader("three-continents.map");
         territories = loader.getTerritories();
+        continents = loader.getContinents();
+
         for(String s : territories.keySet()) {
             System.out.println(s);
         }
         for(Territory t : territories.values()) {
             System.out.println(t.toString());
+        }
+        for(String s : continents.keySet()) {
+            System.out.println(s);
+        }
+        for(Continent c : continents.values()) {
+            System.out.println(c.toString());
         }
     }
 }

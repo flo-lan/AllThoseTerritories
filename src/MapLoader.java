@@ -2,10 +2,8 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.IllegalFormatException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -105,12 +103,32 @@ public class MapLoader {
         }
     }
 
-    public void addNeighbors(String neighbourData) {
+    public void addNeighbors(String neighborData) {
         //TODO
     }
 
     public void addContinent(String continentData) {
         //TODO
+        String continentName = getAffectedRegion(continentData);
+        int unitBoost = getContinentUnitBoost(continentData);
+        String[] territories = getTerritoriesFromContinent(continentData);
+        continents.put(continentName, new Continent(territories, unitBoost));
+    }
+
+    public int getContinentUnitBoost(String line) {
+        String[] stringData = line.split(" ");
+        for(int i = 0; i < stringData.length; i++) {
+            if(isNumber(stringData[i])) {
+                return Integer.parseInt(stringData[i]);
+            }
+        }
+        return 0;
+    }
+
+    public String[] getTerritoriesFromContinent(String line) {
+        ArrayList<String> territories = new ArrayList<>();
+        String[] stringData = line.split(": ");
+        return stringData[1].split(" - ");
     }
 
     //Gets region to which attributes are assigned to
