@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -6,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Territory {
 
-    private ArrayList<Point> patches = new ArrayList<>();
+    private ArrayList<ArrayList<Point>> patches = new ArrayList<>();
     private ArrayList<String> neighbors = new ArrayList<>();
     private Point capital = new Point();
 
@@ -14,7 +15,11 @@ public class Territory {
 
     }
 
-    public void addPatch(Point p) {
+    public ArrayList<ArrayList<Point>> getPatches() {
+        return patches;
+    }
+
+    public void addPatch(ArrayList<Point> p) {
         patches.add(p);
     }
 
@@ -30,8 +35,10 @@ public class Territory {
         String s = "";
         s += "Capital: " + capital.toString() + "\n";
 
-        for(Point p : patches) {
-            s += "Patch: " + p.toString() + "\n";
+        for(ArrayList<Point> pointList : patches) {
+            for (Point p : pointList) {
+                s += "Patch: " + p.toString() + "\n";
+            }
         }
 
         for(String n : neighbors) {

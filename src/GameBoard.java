@@ -11,10 +11,9 @@ public class GameBoard {
 
     public GameBoard() {
         GameBoardFrame boardFrame = new GameBoardFrame();
-        MapLoader loader = new MapLoader("three-continents.map");
+        MapLoader loader = new MapLoader("world.map");
         territories = loader.getTerritories();
         continents = loader.getContinents();
-
         for(Map.Entry<String, Territory> entry : territories.entrySet()) {
             System.out.println(entry.getKey());
             System.out.println(entry.getValue().toString());

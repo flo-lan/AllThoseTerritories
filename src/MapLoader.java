@@ -70,18 +70,11 @@ public class MapLoader {
         //Territory already exists
         if(territories.containsKey(terrName)) {
             terr = territories.get(terrName);
-            addPatches(terr, coordinates);
-
+            terr.addPatch(coordinates);
         } else {
             terr = new Territory();
-            addPatches(terr, coordinates);
+            terr.addPatch(coordinates);
             territories.put(terrName, terr);
-        }
-    }
-
-    public void addPatches(Territory terr, ArrayList<Point> coordinates) {
-        for(Point p : coordinates) {
-            terr.addPatch(p);
         }
     }
 
