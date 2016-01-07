@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class GameBoardFrame extends JFrame{
 
-    private ArrayList<Polygon> polygonList = new ArrayList<>();
+    private ArrayList<TerritoryPolygon> polygonList = new ArrayList<>();
     public JPanel mainPanel;
 
     public GameBoardFrame() {
@@ -22,29 +22,63 @@ public class GameBoardFrame extends JFrame{
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.setColor(Color.BLUE);
-                for(Polygon pol : polygonList) {
-                    g.drawPolygon(pol);
+
+                Graphics2D g2 = (Graphics2D) g; //Needed for Antialiasing
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                                    RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setStroke(new BasicStroke( 5.5f,
+                        BasicStroke.CAP_ROUND,
+                        BasicStroke.JOIN_ROUND));
+
+                for(TerritoryPolygon pol : polygonList) {
+                    g2.setColor(Color.DARK_GRAY);
+                    g2.drawPolygon(pol);
+                    g2.setColor(Color.GRAY);
+                    g2.fillPolygon(pol);
                 }
             }
         };
         mainPanel.setSize(1250, 650);
-        mainPanel.setBackground(Color.CYAN);
         getContentPane().add(mainPanel);
         setVisible(true);
     }
 
-    public void addPolygons(ArrayList<ArrayList<Point>> points) {
+    public void addPolygons(ArrayList<ArrayList<Point>> points, String name) {
         for(ArrayList<Point> pointList : points) {
-            addPolygon(pointList);
+            addPolygon(pointList, name);
         }
     }
 
-    private void addPolygon(ArrayList<Point> points) {
-        Polygon poly = new Polygon();
+    private void addPolygon(ArrayList<Point> points, String name) {
+        TerritoryPolygon poly = new TerritoryPolygon(name);
         for(Point p : points) {
             poly.addPoint((int)(p.getX()), (int) p.getY());
         }
         polygonList.add(poly);
+    }
+
+    public String getClickedTerritory(int x, int y) {
+        String terrName = "";
+        for(TerritoryPolygon pol : polygonList) {
+           if(pol.contains(x, y)) {
+               return pol.getName();
+           }
+        }
+
+        return terrName;
+    }
+}
+
+class TerritoryPolygon extends Polygon {
+
+    private String name;
+
+    public TerritoryPolygon(String name) {
+        super();
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

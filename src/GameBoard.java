@@ -36,8 +36,8 @@ public class GameBoard {
     }
 
     private void addPatchesToFrame() {
-        for(Territory terr: territories.values()) {
-            boardFrame.addPolygons(terr.getPatches());
+        for(Map.Entry<String, Territory> entry: territories.entrySet()) {
+            boardFrame.addPolygons(entry.getValue().getPatches(), entry.getKey());
         }
     }
 
@@ -45,10 +45,7 @@ public class GameBoard {
         boardFrame.mainPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                System.out.println(e.getX() + " "+e.getY());
-                //TODO: returns always null
-                Component panel = (Component)e.getSource();
-                System.out.println(panel.getName());
+                System.out.println(boardFrame.getClickedTerritory(e.getX(), e.getY()));
             }
         });
     }
