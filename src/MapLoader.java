@@ -35,6 +35,7 @@ public class MapLoader {
             while ((line = br.readLine()) != null) {
                 readMapLine(line);
             }
+            in.close();
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -145,10 +146,10 @@ public class MapLoader {
 
         ArrayList<Point> coordinates = new ArrayList<>();
 
-        for(int i = 0; i < stringData.length; i++) {
+        for(int i = 0; i < stringData.length; i++)  {
             if(isNumber(stringData[i]) && isNumber(stringData[i+1])) {
                 coordinates.add(new Point(Integer.parseInt(stringData[i]),
-                                Integer.parseInt(stringData[i+1])));
+                        Integer.parseInt(stringData[i+1])));
                 i++; //jump over next index
             }
         }

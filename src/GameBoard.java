@@ -45,7 +45,9 @@ public class GameBoard {
         boardFrame.mainPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                System.out.println(boardFrame.getClickedTerritory(e.getX(), e.getY()));
+                String name = boardFrame.getClickedTerritory(e.getX(), e.getY());
+                if(name == null) return;
+                System.out.println(name);
             }
         });
     }

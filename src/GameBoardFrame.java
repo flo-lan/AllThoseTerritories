@@ -39,6 +39,8 @@ public class GameBoardFrame extends JFrame{
             }
         };
         mainPanel.setSize(1250, 650);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         getContentPane().add(mainPanel);
         setVisible(true);
     }
@@ -58,14 +60,13 @@ public class GameBoardFrame extends JFrame{
     }
 
     public String getClickedTerritory(int x, int y) {
-        String terrName = "";
         for(TerritoryPolygon pol : polygonList) {
            if(pol.contains(x, y)) {
                return pol.getName();
            }
         }
 
-        return terrName;
+        return null;
     }
 }
 
