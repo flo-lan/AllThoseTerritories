@@ -125,7 +125,7 @@ public class MapLoader {
 
     public String[] getTerritoryList(String line) {
         ArrayList<String> territories = new ArrayList<>();
-        String[] stringData = line.split(": ");
+        String[] stringData = line.split(" : ");
         return stringData[1].split(" - ");
     }
 
@@ -133,7 +133,7 @@ public class MapLoader {
     //Region begins after first space of a line and ends at either " :" or a number
     public String getAffectedRegion(String line) {
         //Check for words with spaces(no numbers or special characters allowed)
-        Matcher match = Pattern.compile("[a-zA-Z ]+").matcher(line);
+        Matcher match = Pattern.compile("[a-zA-Z ]+[a-zA-Z]").matcher(line);
         while (match.find()) {
             //return first result
             return match.group();

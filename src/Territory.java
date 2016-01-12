@@ -10,9 +10,10 @@ public class Territory {
     private ArrayList<ArrayList<Point>> patches = new ArrayList<>();
     private ArrayList<String> neighbors = new ArrayList<>();
     private Point capital = new Point();
+    private boolean BelongsToBot = false;
+    private int Army = 0;
 
     public Territory() {
-
     }
 
     public ArrayList<ArrayList<Point>> getPatches() {
@@ -27,9 +28,24 @@ public class Territory {
         neighbors.add(territory);
     }
 
+    public ArrayList<String> getNeighbors() { return neighbors; }
+
     public void setCapital(Point p) {
         capital = p;
     }
+
+    public Point getCapital() { return capital; }
+
+    public int getArmy()
+    {
+        return Army;
+    }
+
+    public void setArmy(int value) { Army = value; }
+
+    public boolean getBelongsToBot() { return BelongsToBot; }
+
+    public void setBelongsToBot(boolean value) { BelongsToBot = value; }
 
     public String toString() {
         String s = "";
