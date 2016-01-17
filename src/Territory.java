@@ -11,6 +11,8 @@ public class Territory {
     private ArrayList<String> neighbors = new ArrayList<>();
     private Point capital = new Point();
     private boolean BelongsToBot = false;
+    private boolean IsSelected = false;
+    private boolean IsHovered = false;
     private int Army = 0;
 
     public Territory() {
@@ -46,6 +48,14 @@ public class Territory {
     public boolean getBelongsToBot() { return BelongsToBot; }
 
     public void setBelongsToBot(boolean value) { BelongsToBot = value; }
+
+    public boolean getIsSelected() {return IsSelected;}
+
+    public void setIsSelected(boolean value) {IsSelected = value;}
+
+    public boolean getIsHovered() {return IsHovered;}
+
+    public void setIsHovered(boolean value) {IsHovered = value;}
 
     public String toString() {
         String s = "";
