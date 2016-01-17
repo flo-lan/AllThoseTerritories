@@ -5,11 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TimerTask;
 
-/**
- * Created by Florian Langeder on 23.12.15.
- */
 public class GameBoard {
     private GameBoardFrame boardFrame;
     public static HashMap<String, Territory> territories;
@@ -92,25 +88,31 @@ public class GameBoard {
         boardFrame.mainPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                String name = boardFrame.getClickedTerritory(e.getX(), e.getY());
-                if (name == null) return;
+                if(SwingUtilities.isRightMouseButton(e))
+                {
 
-                //GAMELOGIC
+                }
+                else if(SwingUtilities.isLeftMouseButton(e)) {
+                    String name = boardFrame.getClickedTerritory(e.getX(), e.getY());
+                    if (name == null) return;
 
-                Territory item = territories.get(name);
+                    //GAMELOGIC
 
-                item.setArmy(23);
-                item.setBelongsToBot(true);
-                item.setIsSelected(hasselected);
-                hasselected = !hasselected;
+                    Territory item = territories.get(name);
 
-                territories.put(name, item);
+                    item.setArmy(23);
+                    item.setBelongsToBot(true);
+                    item.setIsSelected(hasselected);
+                    hasselected = !hasselected;
 
-                boardFrame.setCurrentAction(name + " clicked");
+                    territories.put(name, item);
 
-                //END GAMELOGIC
+                    boardFrame.setCurrentAction(name + " clicked");
 
-                boardFrame.drawNew();
+                    //END GAMELOGIC
+
+                    boardFrame.drawNew();
+                }
             }
         });
 

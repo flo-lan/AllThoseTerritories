@@ -7,9 +7,6 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Florian Langeder on 23.12.15.
- */
 public class MapLoader {
 
     private HashMap<String, Territory> territories = new HashMap<>();

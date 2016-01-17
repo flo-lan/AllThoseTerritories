@@ -1,4 +1,3 @@
-import javafx.scene.paint.*;
 import javafx.scene.shape.Line;
 
 import javax.swing.*;
@@ -6,9 +5,6 @@ import java.awt.*;
 import java.awt.Color;
 import java.util.ArrayList;
 
-/**
- * Created by Florian Langeder on 23.12.15.
- */
 public class GameBoardFrame extends JFrame {
 
     private final static Color bgcolor = new Color(0, 41, 58);
@@ -91,10 +87,6 @@ public class GameBoardFrame extends JFrame {
         mainPanel.repaint();
     }
 
-    public void cleanPolyList() {
-        polygonList = new ArrayList<>();
-    }
-
     public void addPolygons(ArrayList<ArrayList<Point>> points, String name) {
         for (ArrayList<Point> pointList : points) {
             addPolygon(pointList, name);
@@ -138,8 +130,6 @@ class TerritoryPolygon extends Polygon {
     private final static Color mycolor = new Color(57, 83, 207);
     private final static Color myhighlightcolor = new Color(0, 44, 255);
 
-
-    private boolean isHovered;
     private String name;
 
     public TerritoryPolygon(String name) {
