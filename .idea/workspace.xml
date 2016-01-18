@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="837d168d-a42d-4cf3-9435-70753f639f91" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$1.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$2.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoardFrame.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoardFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Continent.java" afterPath="$PROJECT_DIR$/src/Continent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameBoard.java" afterPath="$PROJECT_DIR$/src/GameBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameBoardFrame.java" afterPath="$PROJECT_DIR$/src/GameBoardFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Territory.java" afterPath="$PROJECT_DIR$/src/Territory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MapLoader.java" afterPath="$PROJECT_DIR$/src/MapLoader.java" />
     </list>
     <ignored path="AllThoseTerritories.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,48 +27,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameBoardFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GameBoardFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3471#3472#0" expanded="true" />
-                <element signature="e#3540#3541#0" expanded="true" />
-                <element signature="e#4048#4049#0" expanded="true" />
-                <element signature="e#4114#4115#0" expanded="true" />
-                <element signature="e#4403#4404#0" expanded="true" />
-                <element signature="e#4439#4440#0" expanded="true" />
-                <element signature="e#4489#4490#0" expanded="true" />
-                <element signature="e#4526#4527#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MapLoader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MapLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            <state vertical-scroll-proportion="-5.83871">
+              <caret line="97" column="58" selection-start-line="97" selection-start-column="58" selection-end-line="97" selection-end-column="58" />
               <folding>
-                <element signature="e#427#428#0" expanded="false" />
-                <element signature="e#460#461#0" expanded="false" />
-                <element signature="e#518#519#0" expanded="false" />
-                <element signature="e#552#553#0" expanded="false" />
-                <element signature="e#609#610#0" expanded="false" />
-                <element signature="e#642#643#0" expanded="false" />
+                <element signature="imports" expanded="true" />
                 <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
-                <element signature="method#addNeighbors#0;class#MapLoader#0" expanded="false" />
-                <element signature="method#addContinent#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#getContinentUnitBoost#0;class#MapLoader#0" expanded="false" />
-                <element signature="method#getTerritoryList#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#getAffectedRegion#0;class#MapLoader#0" expanded="false" />
-                <element signature="method#getCoordinates#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#isNumber#0;class#MapLoader#0" expanded="false" />
               </folding>
             </state>
@@ -104,22 +70,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="three-continents.map" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maps/three-continents.map">
+      <file leaf-file-name="Continent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Continent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,8 +86,8 @@
       <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5078236">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.4">
+              <caret line="180" column="45" selection-start-line="180" selection-start-column="45" selection-end-line="180" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
@@ -159,16 +118,16 @@
       <list>
         <option value="$PROJECT_DIR$/maps/africa.map" />
         <option value="$PROJECT_DIR$/maps/squares.map" />
-        <option value="$PROJECT_DIR$/src/Continent.java" />
         <option value="C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/javax/swing/JComponent.java" />
         <option value="C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/java/awt/geom/Line2D.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/Patch.java" />
-        <option value="$PROJECT_DIR$/src/MapLoader.java" />
         <option value="C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/java/lang/Runnable.java" />
-        <option value="$PROJECT_DIR$/src/GameBoard.java" />
         <option value="$PROJECT_DIR$/src/Territory.java" />
         <option value="$PROJECT_DIR$/src/GameBoardFrame.java" />
+        <option value="$PROJECT_DIR$/src/Continent.java" />
+        <option value="$PROJECT_DIR$/src/MapLoader.java" />
+        <option value="$PROJECT_DIR$/src/GameBoard.java" />
       </list>
     </option>
   </component>
@@ -185,10 +144,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="x" value="1985" />
+    <option name="y" value="24" />
+    <option name="width" value="1855" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -215,9 +174,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,7 +230,7 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TU/1.Semester/PK/Aufgabenblatt8" />
+    <property name="last_opened_file_path" value="$USER_HOME$/TU/1.Semester/PK/Aufgabenblatt8" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -538,6 +497,12 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.main" />
     </list>
@@ -564,15 +529,16 @@
       <workItem from="1452181481120" duration="513000" />
       <workItem from="1452182429662" duration="5684000" />
       <workItem from="1452452906776" duration="131000" />
+      <workItem from="1453144934975" duration="5605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49446000" />
+    <option name="totallyTimeSpent" value="55051000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -581,10 +547,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23535565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23523422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13746631" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -596,7 +563,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -621,27 +587,65 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Patch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Territory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Territory#0;class#Territory#0" expanded="false" />
+            <element signature="method#toString#0;class#Territory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maps/three-continents.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MapLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
           <folding>
-            <element signature="e#427#428#0" expanded="false" />
-            <element signature="e#460#461#0" expanded="false" />
-            <element signature="e#518#519#0" expanded="false" />
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#609#610#0" expanded="false" />
-            <element signature="e#642#643#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addNeighbors#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addContinent#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentUnitBoost#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getTerritoryList#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getAffectedRegion#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getCoordinates#0;class#MapLoader#0" expanded="false" />
             <element signature="method#isNumber#0;class#MapLoader#0" expanded="false" />
           </folding>
         </state>
@@ -714,12 +718,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3471#3472#0" expanded="true" />
-            <element signature="e#3540#3541#0" expanded="true" />
-            <element signature="e#4048#4049#0" expanded="true" />
-            <element signature="e#4114#4115#0" expanded="true" />
-            <element signature="e#4403#4404#0" expanded="true" />
-            <element signature="e#4439#4440#0" expanded="true" />
             <element signature="e#4489#4490#0" expanded="true" />
             <element signature="e#4526#4527#0" expanded="true" />
           </folding>
@@ -731,22 +729,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
           <folding>
-            <element signature="e#427#428#0" expanded="false" />
-            <element signature="e#460#461#0" expanded="false" />
-            <element signature="e#518#519#0" expanded="false" />
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#609#610#0" expanded="false" />
-            <element signature="e#642#643#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addNeighbors#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addContinent#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentUnitBoost#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getTerritoryList#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getAffectedRegion#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getCoordinates#0;class#MapLoader#0" expanded="false" />
             <element signature="method#isNumber#0;class#MapLoader#0" expanded="false" />
           </folding>
         </state>
@@ -812,12 +801,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3471#3472#0" expanded="true" />
-            <element signature="e#3540#3541#0" expanded="true" />
-            <element signature="e#4048#4049#0" expanded="true" />
-            <element signature="e#4114#4115#0" expanded="true" />
-            <element signature="e#4403#4404#0" expanded="true" />
-            <element signature="e#4439#4440#0" expanded="true" />
             <element signature="e#4489#4490#0" expanded="true" />
             <element signature="e#4526#4527#0" expanded="true" />
           </folding>
@@ -829,22 +812,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
           <folding>
-            <element signature="e#427#428#0" expanded="false" />
-            <element signature="e#460#461#0" expanded="false" />
-            <element signature="e#518#519#0" expanded="false" />
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#609#610#0" expanded="false" />
-            <element signature="e#642#643#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addNeighbors#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addContinent#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentUnitBoost#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getTerritoryList#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getAffectedRegion#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getCoordinates#0;class#MapLoader#0" expanded="false" />
             <element signature="method#isNumber#0;class#MapLoader#0" expanded="false" />
           </folding>
         </state>
@@ -895,12 +869,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3471#3472#0" expanded="true" />
-            <element signature="e#3540#3541#0" expanded="true" />
-            <element signature="e#4048#4049#0" expanded="true" />
-            <element signature="e#4114#4115#0" expanded="true" />
-            <element signature="e#4403#4404#0" expanded="true" />
-            <element signature="e#4439#4440#0" expanded="true" />
             <element signature="e#4489#4490#0" expanded="true" />
             <element signature="e#4526#4527#0" expanded="true" />
           </folding>
@@ -912,22 +880,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="165" column="13" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="13" />
           <folding>
-            <element signature="e#427#428#0" expanded="false" />
-            <element signature="e#460#461#0" expanded="false" />
-            <element signature="e#518#519#0" expanded="false" />
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#609#610#0" expanded="false" />
-            <element signature="e#642#643#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addNeighbors#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addContinent#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentUnitBoost#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getTerritoryList#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getAffectedRegion#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getCoordinates#0;class#MapLoader#0" expanded="false" />
             <element signature="method#isNumber#0;class#MapLoader#0" expanded="false" />
           </folding>
         </state>
@@ -950,12 +909,6 @@
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3471#3472#0" expanded="true" />
-            <element signature="e#3540#3541#0" expanded="true" />
-            <element signature="e#4048#4049#0" expanded="true" />
-            <element signature="e#4114#4115#0" expanded="true" />
-            <element signature="e#4403#4404#0" expanded="true" />
-            <element signature="e#4439#4440#0" expanded="true" />
             <element signature="e#4489#4490#0" expanded="true" />
             <element signature="e#4526#4527#0" expanded="true" />
           </folding>
@@ -975,22 +928,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#427#428#0" expanded="false" />
-            <element signature="e#460#461#0" expanded="false" />
-            <element signature="e#518#519#0" expanded="false" />
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#609#610#0" expanded="false" />
-            <element signature="e#642#643#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addNeighbors#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addContinent#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentUnitBoost#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getTerritoryList#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getAffectedRegion#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getCoordinates#0;class#MapLoader#0" expanded="false" />
             <element signature="method#isNumber#0;class#MapLoader#0" expanded="false" />
           </folding>
         </state>
@@ -1020,12 +964,6 @@
           <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3471#3472#0" expanded="true" />
-            <element signature="e#3540#3541#0" expanded="true" />
-            <element signature="e#4048#4049#0" expanded="true" />
-            <element signature="e#4114#4115#0" expanded="true" />
-            <element signature="e#4403#4404#0" expanded="true" />
-            <element signature="e#4439#4440#0" expanded="true" />
             <element signature="e#4489#4490#0" expanded="true" />
             <element signature="e#4526#4527#0" expanded="true" />
           </folding>
@@ -1065,22 +1003,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#427#428#0" expanded="false" />
-            <element signature="e#460#461#0" expanded="false" />
-            <element signature="e#518#519#0" expanded="false" />
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#609#610#0" expanded="false" />
-            <element signature="e#642#643#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addNeighbors#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addContinent#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentUnitBoost#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getTerritoryList#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getAffectedRegion#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getCoordinates#0;class#MapLoader#0" expanded="false" />
             <element signature="method#isNumber#0;class#MapLoader#0" expanded="false" />
           </folding>
         </state>
@@ -1107,39 +1036,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/javax/swing/JComponent.java">
+    <entry file="file://$PROJECT_DIR$/maps/three-continents.map">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3328592">
-          <caret line="775" column="19" selection-start-line="775" selection-start-column="19" selection-end-line="775" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/javax/swing/JComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3328592">
-          <caret line="775" column="19" selection-start-line="775" selection-start-column="19" selection-end-line="775" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/java/awt/geom/Line2D.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55618775">
-          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Continent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.109913796">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.1262136">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maps/three-continents.map">
+    <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1152,53 +1060,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MapLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/Continent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#427#428#0" expanded="false" />
-            <element signature="e#460#461#0" expanded="false" />
-            <element signature="e#518#519#0" expanded="false" />
-            <element signature="e#552#553#0" expanded="false" />
-            <element signature="e#609#610#0" expanded="false" />
-            <element signature="e#642#643#0" expanded="false" />
-            <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addNeighbors#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#addContinent#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getContinentUnitBoost#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getTerritoryList#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getAffectedRegion#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#getCoordinates#0;class#MapLoader#0" expanded="false" />
-            <element signature="method#isNumber#0;class#MapLoader#0" expanded="false" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8065434">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8065434">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1216,26 +1085,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameBoardFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+        <state vertical-scroll-proportion="2.0695653">
+          <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3471#3472#0" expanded="true" />
-            <element signature="e#3540#3541#0" expanded="true" />
-            <element signature="e#4048#4049#0" expanded="true" />
-            <element signature="e#4114#4115#0" expanded="true" />
-            <element signature="e#4403#4404#0" expanded="true" />
-            <element signature="e#4439#4440#0" expanded="true" />
             <element signature="e#4489#4490#0" expanded="true" />
             <element signature="e#4526#4527#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MapLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.83871">
+          <caret line="97" column="58" selection-start-line="97" selection-start-column="58" selection-end-line="97" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
+            <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
+            <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
+            <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
+            <element signature="method#getContinentUnitBoost#0;class#MapLoader#0" expanded="false" />
+            <element signature="method#getAffectedRegion#0;class#MapLoader#0" expanded="false" />
+            <element signature="method#isNumber#0;class#MapLoader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5078236">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.4">
+          <caret line="180" column="45" selection-start-line="180" selection-start-column="45" selection-end-line="180" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
