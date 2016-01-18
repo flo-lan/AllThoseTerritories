@@ -17,12 +17,13 @@ public class GameBoard {
         territories = loader.getTerritories();
         continents = loader.getContinents();
 
-        boardFrame = new GameBoardFrame();
-        addLinesToFrame();
-        addPatchesToFrame();
-        boardFrame.showFrame();
-
-        addFrameListener();
+        SwingUtilities.invokeLater(() -> {
+            boardFrame = new GameBoardFrame();
+            addLinesToFrame();
+            addPatchesToFrame();
+            boardFrame.showFrame();
+            addFrameListener();
+        });
     }
 
     private void addLinesToFrame() {
@@ -120,14 +121,15 @@ public class GameBoard {
             @Override
             public void mouseMoved(MouseEvent e) {
                 super.mouseMoved(e);
-                for (Map.Entry<String, Territory> item : territories.entrySet())
-                    item.getValue().setIsHovered(false);
 
                 String name = boardFrame.getClickedTerritory(e.getX(), e.getY());
                 if (name == null) return;
 
                 Territory item = territories.get(name);
-                if (item == null) return;
+                if (item == null || item.getIsSelected()) return;
+
+                for (Map.Entry<String, Territory> cur : territories.entrySet())
+                    cur.getValue().setIsHovered(false);
 
                 item.setIsHovered(true);
 

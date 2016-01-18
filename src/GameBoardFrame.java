@@ -3,6 +3,7 @@ import javafx.scene.shape.Line;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Color;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public class GameBoardFrame extends JFrame {
@@ -44,32 +45,34 @@ public class GameBoardFrame extends JFrame {
 
                 //DRAW NOT HIGHLIGHTED SECTIONS
                 for (TerritoryPolygon pol : polygonList) {
-                    if (pol.getIsHovered()) continue;
+                    Territory current = GameBoard.territories.get(pol.getName());
+                    if (current == null || current.getIsHovered()) continue;
 
                     g2.setStroke(new BasicStroke(5f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 
                     g2.setColor(Color.DARK_GRAY);
                     g2.drawPolygon(pol);
-                    g2.setColor(pol.getColor());
+                    g2.setColor(current.getColor());
                     g2.fillPolygon(pol);
 
                     g2.setColor(Color.GREEN);
-                    g2.drawString(pol.getArmy(), pol.getCapital().x, pol.getCapital().y);
+                    g2.drawString(String.valueOf(current.getArmy()), current.getCapital().x, current.getCapital().y);
                 }
 
                 //DRAW HIGHLIGHTED SECTIONS
                 for (TerritoryPolygon pol : polygonList) {
-                    if (!pol.getIsHovered()) continue;
+                    Territory current = GameBoard.territories.get(pol.getName());
+                    if (current == null || !current.getIsHovered()) continue;
 
                     g2.setStroke(new BasicStroke(5f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 
                     g2.setColor(Color.ORANGE);
                     g2.drawPolygon(pol);
-                    g2.setColor(pol.getColor());
+                    g2.setColor(current.getColor());
                     g2.fillPolygon(pol);
 
                     g2.setColor(Color.GREEN);
-                    g2.drawString(pol.getArmy(), pol.getCapital().x, pol.getCapital().y);
+                    g2.drawString(String.valueOf(current.getArmy()), current.getCapital().x, current.getCapital().y);
                 }
 
                 g2.drawString(getCurrentAction(), 625, 610);
@@ -84,7 +87,7 @@ public class GameBoardFrame extends JFrame {
     }
 
     public void drawNew() {
-        mainPanel.repaint();
+        SwingUtilities.invokeLater(() -> mainPanel.repaint());
     }
 
     public void addPolygons(ArrayList<ArrayList<Point>> points, String name) {
@@ -125,10 +128,6 @@ public class GameBoardFrame extends JFrame {
 }
 
 class TerritoryPolygon extends Polygon {
-    private final static Color botcolor = new Color(207, 83, 57);
-    private final static Color bothighlightcolor = new Color(255, 44, 0);
-    private final static Color mycolor = new Color(57, 83, 207);
-    private final static Color myhighlightcolor = new Color(0, 44, 255);
 
     private String name;
 
@@ -137,39 +136,5 @@ class TerritoryPolygon extends Polygon {
         this.name = name;
     }
 
-    public Color getColor() {
-        Territory item = GameBoard.territories.get(name);
-        if (item == null || item.getArmy() == 0)
-            return Color.GRAY;
-        else if (item.getBelongsToBot()) {
-            if (item.getIsSelected())
-                return bothighlightcolor;
-            return botcolor;
-        }
-        if (item.getIsSelected())
-            return myhighlightcolor;
-        return mycolor;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public boolean getIsHovered() {
-        Territory item = GameBoard.territories.get(name);
-        if (item == null) return false;
-        return item.getIsHovered();
-    }
-
-    public String getArmy() {
-        Territory item = GameBoard.territories.get(name);
-        if (item == null) return "";
-        return String.valueOf(item.getArmy());
-    }
-
-    public Point getCapital() {
-        Territory item = GameBoard.territories.get(name);
-        if (item == null) return null;
-        return item.getCapital();
-    }
+    public String getName() { return name; }
 }

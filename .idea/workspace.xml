@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="837d168d-a42d-4cf3-9435-70753f639f91" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$1.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$2.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoardFrame.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoardFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameBoard.java" afterPath="$PROJECT_DIR$/src/GameBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameBoardFrame.java" afterPath="$PROJECT_DIR$/src/GameBoardFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MapLoader.java" afterPath="$PROJECT_DIR$/src/MapLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Patch.java" afterPath="$PROJECT_DIR$/src/Patch.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Territory.java" afterPath="$PROJECT_DIR$/src/Territory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
     </list>
     <ignored path="AllThoseTerritories.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,16 +36,17 @@
         <entry file="file://$PROJECT_DIR$/src/GameBoardFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+              <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#addPolygons#0;class#GameBoardFrame#0" expanded="false" />
-                <element signature="method#addPolygon#0;class#GameBoardFrame#0" expanded="false" />
-                <element signature="method#getClickedTerritory#0;class#GameBoardFrame#0" expanded="false" />
-                <element signature="class#TerritoryPolygon#0" expanded="false" />
-                <element signature="method#getColor#0;class#TerritoryPolygon#0" expanded="false" />
-                <element signature="method#getIsHovered#0;class#TerritoryPolygon#0" expanded="false" />
-                <element signature="method#getCapital#0;class#TerritoryPolygon#0" expanded="false" />
+                <element signature="e#3471#3472#0" expanded="true" />
+                <element signature="e#3540#3541#0" expanded="true" />
+                <element signature="e#4048#4049#0" expanded="true" />
+                <element signature="e#4114#4115#0" expanded="true" />
+                <element signature="e#4403#4404#0" expanded="true" />
+                <element signature="e#4439#4440#0" expanded="true" />
+                <element signature="e#4489#4490#0" expanded="true" />
+                <element signature="e#4526#4527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,6 +58,12 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
               <folding>
+                <element signature="e#427#428#0" expanded="false" />
+                <element signature="e#460#461#0" expanded="false" />
+                <element signature="e#518#519#0" expanded="false" />
+                <element signature="e#552#553#0" expanded="false" />
+                <element signature="e#609#610#0" expanded="false" />
+                <element signature="e#642#643#0" expanded="false" />
                 <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
@@ -85,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/src/Territory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Territory#0;class#Territory#0" expanded="false" />
@@ -118,12 +127,11 @@
       <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43527737">
-              <caret line="87" column="66" selection-start-line="87" selection-start-column="66" selection-end-line="87" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.5078236">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
-                <element signature="method#addPatchesToFrame#0;class#GameBoard#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -154,12 +162,13 @@
         <option value="$PROJECT_DIR$/src/Continent.java" />
         <option value="C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/javax/swing/JComponent.java" />
         <option value="C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/java/awt/geom/Line2D.java" />
-        <option value="$PROJECT_DIR$/src/GameBoardFrame.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
-        <option value="$PROJECT_DIR$/src/Territory.java" />
         <option value="$PROJECT_DIR$/src/Patch.java" />
         <option value="$PROJECT_DIR$/src/MapLoader.java" />
+        <option value="C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/java/lang/Runnable.java" />
         <option value="$PROJECT_DIR$/src/GameBoard.java" />
+        <option value="$PROJECT_DIR$/src/Territory.java" />
+        <option value="$PROJECT_DIR$/src/GameBoardFrame.java" />
       </list>
     </option>
   </component>
@@ -207,6 +216,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -255,8 +266,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -563,23 +572,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892057" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23535565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23535565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32740587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -587,7 +596,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -603,7 +612,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="45" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -612,36 +621,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Continent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameBoardFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#addPolygons#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#addPolygon#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#getClickedTerritory#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getColor#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getIsHovered#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getCapital#0;class#TerritoryPolygon#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MapLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
           <folding>
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#460#461#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
@@ -671,7 +661,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
-            <element signature="method#addPatchesToFrame#0;class#GameBoard#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -725,13 +714,14 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addPolygons#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#addPolygon#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#getClickedTerritory#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getColor#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getIsHovered#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getCapital#0;class#TerritoryPolygon#0" expanded="false" />
+            <element signature="e#3471#3472#0" expanded="true" />
+            <element signature="e#3540#3541#0" expanded="true" />
+            <element signature="e#4048#4049#0" expanded="true" />
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
+            <element signature="e#4439#4440#0" expanded="true" />
+            <element signature="e#4489#4490#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -741,6 +731,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
           <folding>
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#460#461#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
@@ -763,7 +759,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
-            <element signature="method#addPatchesToFrame#0;class#GameBoard#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -817,13 +812,14 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addPolygons#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#addPolygon#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#getClickedTerritory#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getColor#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getIsHovered#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getCapital#0;class#TerritoryPolygon#0" expanded="false" />
+            <element signature="e#3471#3472#0" expanded="true" />
+            <element signature="e#3540#3541#0" expanded="true" />
+            <element signature="e#4048#4049#0" expanded="true" />
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
+            <element signature="e#4439#4440#0" expanded="true" />
+            <element signature="e#4489#4490#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -833,6 +829,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
           <folding>
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#460#461#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
@@ -855,7 +857,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
-            <element signature="method#addPatchesToFrame#0;class#GameBoard#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -894,13 +895,14 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addPolygons#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#addPolygon#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#getClickedTerritory#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getColor#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getIsHovered#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getCapital#0;class#TerritoryPolygon#0" expanded="false" />
+            <element signature="e#3471#3472#0" expanded="true" />
+            <element signature="e#3540#3541#0" expanded="true" />
+            <element signature="e#4048#4049#0" expanded="true" />
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
+            <element signature="e#4439#4440#0" expanded="true" />
+            <element signature="e#4489#4490#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -910,6 +912,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="165" column="13" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="13" />
           <folding>
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#460#461#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
@@ -932,7 +940,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
-            <element signature="method#addPatchesToFrame#0;class#GameBoard#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -943,13 +950,14 @@
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addPolygons#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#addPolygon#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#getClickedTerritory#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getColor#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getIsHovered#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getCapital#0;class#TerritoryPolygon#0" expanded="false" />
+            <element signature="e#3471#3472#0" expanded="true" />
+            <element signature="e#3540#3541#0" expanded="true" />
+            <element signature="e#4048#4049#0" expanded="true" />
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
+            <element signature="e#4439#4440#0" expanded="true" />
+            <element signature="e#4489#4490#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -967,6 +975,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#460#461#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
@@ -989,7 +1003,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
-            <element signature="method#addPatchesToFrame#0;class#GameBoard#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1007,13 +1020,14 @@
           <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addPolygons#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#addPolygon#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#getClickedTerritory#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getColor#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getIsHovered#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getCapital#0;class#TerritoryPolygon#0" expanded="false" />
+            <element signature="e#3471#3472#0" expanded="true" />
+            <element signature="e#3540#3541#0" expanded="true" />
+            <element signature="e#4048#4049#0" expanded="true" />
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
+            <element signature="e#4439#4440#0" expanded="true" />
+            <element signature="e#4489#4490#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1051,6 +1065,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#460#461#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
@@ -1124,18 +1144,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Territory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Territory#0;class#Territory#0" expanded="false" />
-            <element signature="method#toString#0;class#Territory#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Patch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1144,28 +1152,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameBoardFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#addPolygons#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#addPolygon#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="method#getClickedTerritory#0;class#GameBoardFrame#0" expanded="false" />
-            <element signature="class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getColor#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getIsHovered#0;class#TerritoryPolygon#0" expanded="false" />
-            <element signature="method#getCapital#0;class#TerritoryPolygon#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MapLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding>
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#460#461#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
             <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#readMapLine#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
@@ -1181,6 +1178,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8065434">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_66/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8065434">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1189,14 +1202,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Territory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Territory#0;class#Territory#0" expanded="false" />
+            <element signature="method#toString#0;class#Territory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameBoardFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3471#3472#0" expanded="true" />
+            <element signature="e#3540#3541#0" expanded="true" />
+            <element signature="e#4048#4049#0" expanded="true" />
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
+            <element signature="e#4439#4440#0" expanded="true" />
+            <element signature="e#4489#4490#0" expanded="true" />
+            <element signature="e#4526#4527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43527737">
-          <caret line="87" column="66" selection-start-line="87" selection-start-column="66" selection-end-line="87" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.5078236">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addLinesToFrame#0;class#GameBoard#0" expanded="false" />
-            <element signature="method#addPatchesToFrame#0;class#GameBoard#0" expanded="false" />
           </folding>
         </state>
       </provider>

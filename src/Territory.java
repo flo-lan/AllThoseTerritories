@@ -2,6 +2,10 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Territory {
+    private final static Color botcolor = new Color(207, 83, 57);
+    private final static Color bothighlightcolor = new Color(255, 44, 0);
+    private final static Color mycolor = new Color(57, 83, 207);
+    private final static Color myhighlightcolor = new Color(0, 44, 255);
 
     private ArrayList<ArrayList<Point>> patches = new ArrayList<>();
     private ArrayList<String> neighbors = new ArrayList<>();
@@ -52,6 +56,21 @@ public class Territory {
     public boolean getIsHovered() {return IsHovered;}
 
     public void setIsHovered(boolean value) {IsHovered = value;}
+
+    public Color getColor() {
+        if (Army == 0)
+            return Color.GRAY;
+
+        if (BelongsToBot) {
+            if (IsSelected)
+                return bothighlightcolor;
+            return botcolor;
+        }
+
+        if (IsSelected)
+            return myhighlightcolor;
+        return mycolor;
+    }
 
     public String toString() {
         String s = "";
