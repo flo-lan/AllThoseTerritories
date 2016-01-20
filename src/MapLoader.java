@@ -1,9 +1,9 @@
 import java.awt.*;
+import java.awt.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -96,7 +96,7 @@ public class MapLoader {
 
     public void addNeighbors(String neighborData) {
         String terrName = getAffectedRegion(neighborData);
-        String[] territoryList = getTerritoryList(neighborData);
+        ArrayList<String> territoryList = getTerritoryList(neighborData);
         Territory terr = territories.get(terrName);
         for(String s : territoryList) {
             terr.addNeighbor(s);
@@ -106,7 +106,7 @@ public class MapLoader {
     public void addContinent(String continentData) {
         String continentName = getAffectedRegion(continentData);
         int unitBoost = getContinentUnitBoost(continentData);
-        String[] territoryList = getTerritoryList(continentData);
+        ArrayList<String> territoryList = getTerritoryList(continentData);
         continents.put(continentName, new Continent(territoryList, unitBoost));
     }
 
@@ -120,10 +120,10 @@ public class MapLoader {
         return 0;
     }
 
-    public String[] getTerritoryList(String line) {
-        ArrayList<String> territories = new ArrayList<>();
+    public ArrayList<String> getTerritoryList(String line) {
         String[] stringData = line.split(" : ");
-        return stringData[1].split(" - ");
+        stringData = stringData[1].split(" - ");
+        return new ArrayList(Arrays.asList(stringData));
     }
 
     //Gets region to which attributes are assigned to

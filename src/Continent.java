@@ -1,14 +1,27 @@
+import java.util.ArrayList;
+
 /**
  * Created by Florian Langeder on 23.12.15.
  */
 public class Continent {
 
-    private String[] territories;
+    private ArrayList<String> territories;
     private int unitBoost;
 
-    public Continent(String[] territories, int unitBoost) {
+    public Continent(ArrayList<String> territories, int unitBoost) {
         this.territories = territories;
         this.unitBoost = unitBoost;
+    }
+
+    public ArrayList<String> getTerritories() {
+        return territories;
+    }
+
+    public boolean containsTerritory(String terr) {
+        for(String s : territories) {
+            if(s.equals(terr)) return true;
+        }
+        return false;
     }
 
     public String toString() {

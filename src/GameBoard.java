@@ -3,11 +3,16 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class GameBoard {
     private GameBoardFrame boardFrame;
+    //Setup: Put units on territories
+    //Conquest: Attack and Move units (after inital setup)
+    private enum Phase {Setup, Conquest};
+    private Phase gamePhase;
+    //Last continent, which player picked in setup phase, for NPC AI
+    private Continent lastPickedContinent;
     public static HashMap<String, Territory> territories;
     public static HashMap<String, Continent> continents;
 
@@ -16,6 +21,8 @@ public class GameBoard {
 
         territories = loader.getTerritories();
         continents = loader.getContinents();
+
+        gamePhase = Phase.Setup;
 
         SwingUtilities.invokeLater(() -> {
             boardFrame = new GameBoardFrame();
@@ -101,14 +108,18 @@ public class GameBoard {
 
                     Territory item = territories.get(name);
 
-                    item.setArmy(23);
-                    item.setBelongsToBot(true);
-                    item.setIsSelected(hasselected);
-                    hasselected = !hasselected;
-
-                    territories.put(name, item);
-
-                    boardFrame.setCurrentAction(name + " clicked");
+                    if(gamePhase == Phase.Setup && item.getArmy() != 1) {
+                        item.setArmy(1);
+                        item.setBelongsToBot(false);
+                        item.setIsSelected(hasselected);
+                        hasselected = !hasselected;
+                        territories.put(name, item);
+                        lastPickedContinent = getContinentFromTerritory(name);
+                        boardFrame.setCurrentAction("You picked: " + name);
+                        //TODO: lock event until npc finished
+                        pickNPCTerritory();
+                        //TODO: check for end of phase
+                    }
 
                     //END GAMELOGIC
 
@@ -136,5 +147,55 @@ public class GameBoard {
                 boardFrame.drawNew();
             }
         });
+    }
+
+    private void pickNPCTerritory() {
+        if(lastPickedContinent != null) {
+            String name = getRandomFreeTerritoryFromContinent(lastPickedContinent);
+            if(name != null) {
+                Territory item = territories.get(name);
+                item.setArmy(1);
+                item.setBelongsToBot(true);
+                territories.put(name, item);
+                boardFrame.setCurrentAction(boardFrame.getCurrentAction() + " - Opponent picked: " + name);
+            }
+        }
+    }
+
+    private Continent getContinentFromTerritory(String terrName) {
+        for(Continent c : continents.values()) {
+            if(c.containsTerritory(terrName)) {
+                return c;
+            }
+        }
+        return null;
+    }
+
+    private String getRandomFreeTerritory() {
+        ArrayList<String> territoryNames = new ArrayList<>();
+        for(String s : territories.keySet()) {
+            territoryNames.add(s);
+        }
+        Collections.shuffle(territoryNames);
+        for(String st : territoryNames) {
+            Territory t = territories.get(st);
+            if(t.getArmy() == 0) {
+                return st;
+            }
+        }
+        return null;
+    }
+
+    private String getRandomFreeTerritoryFromContinent(Continent c) {
+        ArrayList<String> territoryList = c.getTerritories();
+        Collections.shuffle(territoryList);
+        for(String terrName : territoryList) {
+            Territory item = territories.get(terrName);
+            if(item.getArmy() == 0) {
+                return terrName;
+            }
+        }
+        //No free territory found in continent
+        return getRandomFreeTerritory();
     }
 }
