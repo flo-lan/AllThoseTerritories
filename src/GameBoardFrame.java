@@ -3,7 +3,6 @@ import javafx.scene.shape.Line;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Color;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public class GameBoardFrame extends JFrame {
@@ -14,8 +13,11 @@ public class GameBoardFrame extends JFrame {
     private ArrayList<TerritoryPolygon> polygonList = new ArrayList<>();
     private ArrayList<Line> lineList = new ArrayList<>();
     private String CurrentAction = "";
+    private String currentPhase = "Setup";
+    private String unitsLeft = "";
 
     public JPanel mainPanel;
+    public JButton nextRoundBtn;
 
     public GameBoardFrame() {
         super("All Those Territories - © Langeder, Mauracher 2016");
@@ -76,10 +78,19 @@ public class GameBoardFrame extends JFrame {
                 }
 
                 g2.drawString(getCurrentAction(), 625, 610);
+                g2.drawString("Current Phase: " + currentPhase, 5, 15);
+                if(!unitsLeft.equals("") && !unitsLeft.equals("0"))
+                    g2.drawString("Units left: " + unitsLeft, 5, 30);
             }
         };
         mainPanel.setBackground(bgcolor);
         mainPanel.setSize(1250, 650);
+        mainPanel.setLayout(null);
+        nextRoundBtn = new JButton("Next Round");
+        nextRoundBtn.setBounds(1145, 615, 100, 30);
+        nextRoundBtn.setFont(new Font("Arial", Font.PLAIN, 10));
+        mainPanel.add(nextRoundBtn);
+
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
         getContentPane().add(mainPanel);
@@ -124,6 +135,14 @@ public class GameBoardFrame extends JFrame {
 
     public void setCurrentAction(String value) {
         CurrentAction = value;
+    }
+
+    public void setCurrentPhase(String value) {
+        currentPhase = value;
+    }
+
+    public void setUnitsLeft(int value) {
+        unitsLeft = String.valueOf(value);
     }
 }
 

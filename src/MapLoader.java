@@ -98,8 +98,11 @@ public class MapLoader {
         String terrName = getAffectedRegion(neighborData);
         ArrayList<String> territoryList = getTerritoryList(neighborData);
         Territory terr = territories.get(terrName);
+        Territory neighbor;
         for(String s : territoryList) {
             terr.addNeighbor(s);
+            neighbor = territories.get(s);
+            neighbor.addNeighbor(terrName);
         }
     }
 
