@@ -6,15 +6,19 @@ import java.util.ArrayList;
 public class Continent {
 
     private ArrayList<String> territories;
-    private int unitBoost;
+    private int reinforcements;
 
-    public Continent(ArrayList<String> territories, int unitBoost) {
+    public Continent(ArrayList<String> territories, int reinforcements) {
         this.territories = territories;
-        this.unitBoost = unitBoost;
+        this.reinforcements = reinforcements;
     }
 
     public ArrayList<String> getTerritories() {
         return territories;
+    }
+
+    public int getReinforcements() {
+        return reinforcements;
     }
 
     public boolean containsTerritory(String terr) {
@@ -26,7 +30,7 @@ public class Continent {
 
     public String toString() {
         String s = "";
-        s += "UnitBoost: " + unitBoost + "\n";
+        s += "UnitBoost: " + reinforcements + "\n";
         for(String t : territories) {
             s += "Terr: " + t + "\n";
         }

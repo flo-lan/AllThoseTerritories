@@ -15,6 +15,8 @@ public class GameBoard {
     private Continent lastPickedContinent;
     public static HashMap<String, Territory> territories;
     public static HashMap<String, Continent> continents;
+    public static enum Player {Human, Bot}
+    private Player curPlayer;
 
     public GameBoard() {
         MapLoader loader = new MapLoader("world.map");
@@ -22,6 +24,7 @@ public class GameBoard {
         territories = loader.getTerritories();
         continents = loader.getContinents();
 
+        chooseRandomStartingPlayer();
         gamePhase = Phase.Setup;
 
         SwingUtilities.invokeLater(() -> {
@@ -30,6 +33,7 @@ public class GameBoard {
             addPatchesToFrame();
             boardFrame.showFrame();
             addFrameListener();
+            if(curPlayer == Player.Bot) pickNPCTerritory();
         });
     }
 
@@ -110,7 +114,7 @@ public class GameBoard {
 
                     if(gamePhase == Phase.Setup && item.getArmy() != 1) {
                         item.setArmy(1);
-                        item.setBelongsToBot(false);
+                        item.setBelongsTo(Player.Human);
                         item.setIsSelected(hasselected);
                         hasselected = !hasselected;
                         territories.put(name, item);
@@ -118,7 +122,7 @@ public class GameBoard {
                         boardFrame.setCurrentAction("You picked: " + name);
                         //TODO: lock event until npc finished
                         pickNPCTerritory();
-                        //TODO: check for end of phase
+                        checkIfSetupEnded();
                     }
 
                     //END GAMELOGIC
@@ -149,16 +153,33 @@ public class GameBoard {
         });
     }
 
+    private void chooseRandomStartingPlayer() {
+        Random r = new Random();
+        int player = r.nextInt(2);
+        if(player == 0) {
+            curPlayer = Player.Human;
+        } else {
+            curPlayer = Player.Bot;
+        }
+        System.out.println(curPlayer);
+    }
+
     private void pickNPCTerritory() {
-        if(lastPickedContinent != null) {
-            String name = getRandomFreeTerritoryFromContinent(lastPickedContinent);
-            if(name != null) {
-                Territory item = territories.get(name);
-                item.setArmy(1);
-                item.setBelongsToBot(true);
-                territories.put(name, item);
-                boardFrame.setCurrentAction(boardFrame.getCurrentAction() + " - Opponent picked: " + name);
-            }
+        String name;
+        if(lastPickedContinent == null) {
+            //Bot starts to choose
+            name = getRandomFreeTerritory();
+        } else {
+            name = getRandomFreeTerritoryFromContinent(lastPickedContinent);
+        }
+        if(name != null) {
+            Territory item = territories.get(name);
+            item.setArmy(1);
+            item.setBelongsTo(Player.Bot);
+            item.setIsSelected(hasselected);
+            hasselected = !hasselected;
+            territories.put(name, item);
+            boardFrame.setCurrentAction(boardFrame.getCurrentAction() + " - Opponent picked: " + name);
         }
     }
 
@@ -197,5 +218,42 @@ public class GameBoard {
         }
         //No free territory found in continent
         return getRandomFreeTerritory();
+    }
+
+    private void checkIfSetupEnded() {
+        for(Territory t : territories.values()) {
+            if(t.getArmy() == 0) {
+                return;
+            }
+        }
+        //No territory with 0 armies left
+        //Switch Phase
+        gamePhase = Phase.Conquest;
+        startRound();
+    }
+
+    private void startRound() {
+        System.out.println(calculateReinforcement());
+    }
+
+    private int calculateReinforcement() {
+        int countUnits = 0;
+        int countTerritories = 0;
+        boolean hasAll;
+        for(Continent c : continents.values()) {
+            hasAll = true;
+            for(String terrName : c.getTerritories()) {
+                Territory t = territories.get(terrName);
+                if(t.getBelongsTo() != curPlayer) {
+                    hasAll = false;
+                } else {
+                    countTerritories++;
+                }
+            }
+            if(hasAll) {
+                countUnits += c.getReinforcements();
+            }
+        }
+        return countUnits + (countTerritories / 3);
     }
 }

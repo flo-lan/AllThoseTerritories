@@ -105,12 +105,12 @@ public class MapLoader {
 
     public void addContinent(String continentData) {
         String continentName = getAffectedRegion(continentData);
-        int unitBoost = getContinentUnitBoost(continentData);
+        int reinforcements = getContinentReinforcements(continentData);
         ArrayList<String> territoryList = getTerritoryList(continentData);
-        continents.put(continentName, new Continent(territoryList, unitBoost));
+        continents.put(continentName, new Continent(territoryList, reinforcements));
     }
 
-    public int getContinentUnitBoost(String line) {
+    public int getContinentReinforcements(String line) {
         String[] stringData = line.split(" ");
         for(int i = 0; i < stringData.length; i++) {
             if(isNumber(stringData[i])) {
