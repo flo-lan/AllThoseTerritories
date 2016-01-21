@@ -3,6 +3,7 @@ import javafx.scene.shape.Line;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Color;
+import java.awt.geom.Line2D;
 import java.util.ArrayList;
 
 public class GameBoardFrame extends JFrame {
@@ -18,6 +19,10 @@ public class GameBoardFrame extends JFrame {
 
     public JPanel mainPanel;
     public JButton nextRoundBtn;
+
+    public Point arrowFrom = new Point(0, 0);
+    public Point arrowTo = new Point(0, 0);
+    public boolean drawArrow = false;
 
     public GameBoardFrame() {
         super("All Those Territories - © Langeder, Mauracher 2016");
@@ -77,10 +82,16 @@ public class GameBoardFrame extends JFrame {
                     g2.drawString(String.valueOf(current.getArmy()), current.getCapital().x, current.getCapital().y);
                 }
 
+                if(drawArrow) {
+                    drawArrow(g2, arrowTo, arrowFrom, Color.black);
+                }
+
+                g2.setColor(Color.GREEN);
                 g2.drawString(getCurrentAction(), 625, 610);
                 g2.drawString("Current Phase: " + currentPhase, 5, 15);
                 if(!unitsLeft.equals("") && !unitsLeft.equals("0"))
                     g2.drawString("Units left: " + unitsLeft, 5, 30);
+
             }
         };
         mainPanel.setBackground(bgcolor);
@@ -101,6 +112,27 @@ public class GameBoardFrame extends JFrame {
         SwingUtilities.invokeLater(() -> mainPanel.repaint());
     }
 
+    private void drawArrow(Graphics2D g2, Point to, Point from, Color color)
+    {
+        g2.setPaint(color);
+        Line2D l = new Line2D.Double(from.getX(), from.getY(), to.getX(), to.getY());
+        g2.draw(l);
+        double phi = Math.toRadians(40);
+        int barb = 20;
+
+        double dy = to.y - from.y;
+        double dx = to.x - from.x;
+        double theta = Math.atan2(dy, dx);
+
+        double x, y, rho = theta + phi;
+        for(int j = 0; j < 2; j++)
+        {
+            x = to.x - barb * Math.cos(rho);
+            y = to.y - barb * Math.sin(rho);
+            g2.draw(new Line2D.Double(to.x, to.y, x, y));
+            rho = theta - phi;
+        }
+    }
     public void addPolygons(ArrayList<ArrayList<Point>> points, String name) {
         for (ArrayList<Point> pointList : points) {
             addPolygon(pointList, name);

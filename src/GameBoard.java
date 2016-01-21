@@ -135,8 +135,7 @@ public class GameBoard {
                             if (curUnits <= 0) {
                                 startAttackPhase();
                             }
-                        } else if (gamePhase == Phase.Conquest && item.getBelongsTo() == curPlayer) {
-                           // hightlightNeighbors(item);
+                        } else if (gamePhase == Phase.Conquest && item.getBelongsTo() == curPlayer && item.getArmy() > 1) {
                             deselectTerritory(lastPickedTerritory);
                             item.setIsSelected(true);
                             selectNeighbors(item);
@@ -159,12 +158,27 @@ public class GameBoard {
                 if (name == null) return;
 
                 Territory item = territories.get(name);
-                if (item == null || item.getIsSelected()) return;
+                //if (item == null || item.getIsSelected()) return;
+                if (item == null) return;
 
                 for (Map.Entry<String, Territory> cur : territories.entrySet())
                     cur.getValue().setIsHovered(false);
 
-                item.setIsHovered(true);
+                boardFrame.drawArrow = false;
+                if(gamePhase == Phase.Conquest) {
+                    //Draw Arrow to attacking territory
+                    if(item.getIsSelected() && item.getBelongsTo() != curPlayer) {
+                        Territory t = territories.get(lastPickedTerritory);
+                        boardFrame.arrowFrom = t.getCapital();
+                        boardFrame.arrowTo = item.getCapital();
+                        boardFrame.drawArrow = true;
+                        item.setIsHovered(true);
+                    } else if(item.getArmy() > 1 && item.getBelongsTo() == curPlayer) {
+                        item.setIsHovered(true);
+                    }
+                } else {
+                    item.setIsHovered(true);
+                }
 
                 boardFrame.drawNew();
             }
@@ -219,7 +233,7 @@ public class GameBoard {
             //Bot starts to choose
             name = getRandomFreeTerritory();
         } else {
-            name = lastPickedTerritory;
+            name = getRandomFreeTerritoryFromContinent(lastPickedContinent);
         }
         if(name != null) {
             Territory item = territories.get(name);
