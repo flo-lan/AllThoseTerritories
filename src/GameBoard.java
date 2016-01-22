@@ -36,7 +36,7 @@ public class GameBoard {
             addFrameListener();
             if(curPlayer == Player.Bot) pickNPCTerritory();
 
-            autoFill(); //DEBUG!!!
+            //autoFill(); //DEBUG!!!
         });
     }
 
@@ -152,17 +152,19 @@ public class GameBoard {
         boardFrame.mainPanel.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
+
                 super.mouseMoved(e);
 
+                for (Map.Entry<String, Territory> cur : territories.entrySet())
+                    cur.getValue().setIsHovered(false);
+
+                boardFrame.drawNew();
                 String name = boardFrame.getClickedTerritory(e.getX(), e.getY());
                 if (name == null) return;
 
                 Territory item = territories.get(name);
                 //if (item == null || item.getIsSelected()) return;
                 if (item == null) return;
-
-                for (Map.Entry<String, Territory> cur : territories.entrySet())
-                    cur.getValue().setIsHovered(false);
 
                 boardFrame.drawArrow = false;
                 if(gamePhase == Phase.Conquest) {
@@ -236,15 +238,26 @@ public class GameBoard {
             name = getRandomFreeTerritoryFromContinent(lastPickedContinent);
         }
         if(name != null) {
-            Territory item = territories.get(name);
-            item.setArmy(1);
-            item.setBelongsTo(Player.Bot);
-            /*item.setIsSelected(hasselected);
-            hasselected = !hasselected;*/
-            territories.put(name, item);
-            //TODO: Override instead of append
-            boardFrame.setCurrentAction(boardFrame.getCurrentAction() + " - Opponent picked: " + name);
-            curPlayer = Player.Human;
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            // your code here
+                            Territory item = territories.get(name);
+                            item.setArmy(1);
+                            item.setBelongsTo(Player.Bot);
+                            /*item.setIsSelected(hasselected);
+                            hasselected = !hasselected;*/
+                            territories.put(name, item);
+                            //TODO: Override instead of append
+                            boardFrame.setCurrentAction(boardFrame.getCurrentAction() + " - Opponent picked: " + name);
+                            curPlayer = Player.Human;
+                            boardFrame.drawNew();
+                        }
+                    },
+                    500
+            );
+
         }
     }
 
