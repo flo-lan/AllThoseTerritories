@@ -158,6 +158,7 @@ public class GameBoard {
                 for (Map.Entry<String, Territory> cur : territories.entrySet())
                     cur.getValue().setIsHovered(false);
 
+                boardFrame.drawArrow = false;
                 boardFrame.drawNew();
                 String name = boardFrame.getClickedTerritory(e.getX(), e.getY());
                 if (name == null) return;
@@ -166,7 +167,7 @@ public class GameBoard {
                 //if (item == null || item.getIsSelected()) return;
                 if (item == null) return;
 
-                boardFrame.drawArrow = false;
+
                 if(gamePhase == Phase.Conquest) {
                     //Draw Arrow to attacking territory
                     if(item.getIsSelected() && item.getBelongsTo() != curPlayer) {
@@ -181,7 +182,6 @@ public class GameBoard {
                 } else {
                     item.setIsHovered(true);
                 }
-
                 boardFrame.drawNew();
             }
         });
@@ -190,7 +190,7 @@ public class GameBoard {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JButton b = (JButton) e.getSource();
-                if(b.isEnabled()) {
+                if(b.isEnabled() && gamePhase == Phase.Conquest && curPlayer == Player.Human) {
                     curPlayer = Player.Bot;
                     deselectTerritory(lastPickedTerritory);
                     nextRound();
@@ -210,12 +210,16 @@ public class GameBoard {
     }
 
     private void deselectTerritory(String name) {
-        Territory t = territories.get(name);
-        t.setIsSelected(false);
-        Territory neighbor;
-        for(String s : t.getNeighbors()) {
-            neighbor = territories.get(s);
-            neighbor.setIsSelected(false);
+        if(name != null) {
+            Territory t = territories.get(name);
+            if(t != null) {
+                t.setIsSelected(false);
+                Territory neighbor;
+                for (String s : t.getNeighbors()) {
+                    neighbor = territories.get(s);
+                    neighbor.setIsSelected(false);
+                }
+            }
         }
     }
 
@@ -307,6 +311,18 @@ public class GameBoard {
         //No territory with 0 armies left
         //Switch Phase
         nextRound();
+    }
+
+    private boolean checkIfGameEnded() {
+        Player belongsTo = null;
+        for(Territory t : territories.values()) {
+            if(belongsTo == null) {
+                belongsTo = t.getBelongsTo();
+            } else if(belongsTo != t.getBelongsTo()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void nextRound() {

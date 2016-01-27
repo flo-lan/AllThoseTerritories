@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="837d168d-a42d-4cf3-9435-70753f639f91" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$2.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoardFrame$1.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoardFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoardFrame.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoardFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/TerritoryPolygon.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/TerritoryPolygon.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameBoard.java" afterPath="$PROJECT_DIR$/src/GameBoard.java" />
     </list>
@@ -46,8 +41,8 @@
       <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85020804">
-              <caret line="253" column="53" selection-start-line="253" selection-start-column="53" selection-end-line="253" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.86130375">
+              <caret line="324" column="20" selection-start-line="324" selection-start-column="20" selection-end-line="324" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,10 +54,9 @@
         <entry file="file://$PROJECT_DIR$/src/MapLoader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
                 <element signature="method#getContinentReinforcements#0;class#MapLoader#0" expanded="false" />
@@ -151,10 +145,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="x" value="1984" />
+    <option name="y" value="-4" />
+    <option name="width" value="1857" />
+    <option name="height" value="1085" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -181,6 +175,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,15 +226,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/TU/1.Semester/PK/Aufgabenblatt8" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/TU/1.Semester/PK/Aufgabenblatt8" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -698,15 +692,21 @@
       <workItem from="1452452906776" duration="131000" />
       <workItem from="1453389251971" duration="20673000" />
       <workItem from="1453463211911" duration="2651000" />
-      <workItem from="1453469794200" duration="220000" />
+      <workItem from="1453469794200" duration="543000" />
+      <workItem from="1453480401110" duration="1235000" />
+      <workItem from="1453482756865" duration="190000" />
+      <workItem from="1453823115654" duration="39000" />
+      <workItem from="1453840611990" duration="69000" />
+      <workItem from="1453840772369" duration="17000" />
+      <workItem from="1453922867432" duration="3356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72990000" />
+    <option name="totallyTimeSpent" value="78219000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="1984" y="-4" width="1857" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -760,7 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,7 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,7 +805,6 @@
           <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentReinforcements#0;class#MapLoader#0" expanded="false" />
@@ -866,7 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -898,7 +894,6 @@
           <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentReinforcements#0;class#MapLoader#0" expanded="false" />
@@ -950,7 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -982,7 +976,6 @@
           <caret line="139" column="45" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentReinforcements#0;class#MapLoader#0" expanded="false" />
@@ -1020,7 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,7 +1044,6 @@
           <caret line="165" column="13" selection-start-line="165" selection-start-column="13" selection-end-line="165" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentReinforcements#0;class#MapLoader#0" expanded="false" />
@@ -1102,7 +1093,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentReinforcements#0;class#MapLoader#0" expanded="false" />
@@ -1157,7 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,7 +1168,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentReinforcements#0;class#MapLoader#0" expanded="false" />
@@ -1216,7 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1227,22 +1214,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
+    <entry file="file://$PROJECT_DIR$/src/GameBoardFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Territory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+          <caret line="160" column="20" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Territory#0;class#Territory#0" expanded="false" />
-            <element signature="method#toString#0;class#Territory#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1259,13 +1236,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Territory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Territory#0;class#Territory#0" expanded="false" />
+            <element signature="method#toString#0;class#Territory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MapLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#readFile#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addPatch#0;class#MapLoader#0" expanded="false" />
             <element signature="method#addCapital#0;class#MapLoader#0" expanded="false" />
             <element signature="method#getContinentReinforcements#0;class#MapLoader#0" expanded="false" />
@@ -1277,20 +1265,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameBoardFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="160" column="20" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.024965325">
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#112#113#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85020804">
-          <caret line="253" column="53" selection-start-line="253" selection-start-column="53" selection-end-line="253" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.86130375">
+          <caret line="324" column="20" selection-start-line="324" selection-start-column="20" selection-end-line="324" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
