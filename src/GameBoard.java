@@ -186,15 +186,12 @@ public class GameBoard {
             }
         });
 
-        boardFrame.nextRoundBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JButton b = (JButton) e.getSource();
-                if(b.isEnabled() && gamePhase == Phase.Conquest && curPlayer == Player.Human) {
-                    curPlayer = Player.Bot;
-                    deselectTerritory(lastPickedTerritory);
-                    nextRound();
-                }
+        boardFrame.nextRoundBtn.addActionListener(e -> {
+            JButton b = (JButton) e.getSource();
+            if(b.isEnabled() && gamePhase == Phase.Conquest && curPlayer == Player.Human) {
+                curPlayer = Player.Bot;
+                deselectTerritory(lastPickedTerritory);
+                nextRound();
             }
         });
     }
