@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-/**
- * Created by Florian Langeder on 23.12.15.
- */
 public class Continent {
 
     private ArrayList<String> territories;

@@ -5,18 +5,25 @@ import java.util.*;
 
 public class GameBoard {
     private GameBoardFrame boardFrame;
+
     //Setup: Put units on territories
     //Reinforce: Place units at the start of a round
     //Conquest: Attack and Move units (after inital setup)
-    private enum Phase {Setup, Reinforce,  Conquest};
+    private enum Phase {
+        Setup, Reinforce, Conquest
+    }
+
+    ;
     private Phase gamePhase;
     //Last continent, which player picked in setup phase, for NPC AI
     private Continent lastPickedContinent;
     private String lastPickedTerritory = "";
     public static HashMap<String, Territory> territories;
     public static HashMap<String, Continent> continents;
-    public static enum Player {Human, Bot}
-    private Player curPlayer;
+
+    public enum Player {Human, Bot}
+
+    private Player curPlayer = Player.Bot;
     private int curUnits = 0;
 
     public GameBoard() {
@@ -28,16 +35,14 @@ public class GameBoard {
         chooseRandomStartingPlayer();
         gamePhase = Phase.Setup;
 
-        SwingUtilities.invokeLater(() -> {
-            boardFrame = new GameBoardFrame();
-            addLinesToFrame();
-            addPatchesToFrame();
-            boardFrame.showFrame();
-            addFrameListener();
-            if(curPlayer == Player.Bot) pickNPCTerritory();
+        boardFrame = new GameBoardFrame();
+        addLinesToFrame();
+        addPatchesToFrame();
+        boardFrame.showFrame();
+        addFrameListener();
+        if (curPlayer == Player.Bot) pickNPCTerritory();
 
-            //autoFill(); //DEBUG!!!
-        });
+        //autoFill(); //DEBUG!!!
     }
 
     private void addLinesToFrame() {
@@ -103,23 +108,20 @@ public class GameBoard {
         boardFrame.mainPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                if(SwingUtilities.isRightMouseButton(e))
-                {
+                if (SwingUtilities.isRightMouseButton(e)) {
 
-                }
-                else if(SwingUtilities.isLeftMouseButton(e)) {
+                } else if (SwingUtilities.isLeftMouseButton(e)) {
                     String name = boardFrame.getClickedTerritory(e.getX(), e.getY());
                     if (name == null) return;
 
                     //GAMELOGIC
 
                     Territory item = territories.get(name);
-                    if(curPlayer == Player.Human) {
+
+                    if (curPlayer == Player.Human) {
                         if (gamePhase == Phase.Setup && item.getArmy() != 1) {
                             item.setArmy(1);
                             item.setBelongsTo(Player.Human);
-                            /*item.setIsSelected(hasselected);
-                            hasselected = !hasselected;*/
                             territories.put(name, item);
                             lastPickedContinent = getContinentFromTerritory(name);
                             lastPickedTerritory = name;
@@ -127,12 +129,14 @@ public class GameBoard {
                             curPlayer = Player.Bot;
                             pickNPCTerritory();
                             checkIfSetupEnded();
-                        } else if (gamePhase == Phase.Reinforce && curUnits > 0 && item.getBelongsTo() == curPlayer) {
+                        } else if (
+                            gamePhase == Phase.Reinforce && curUnits > 0 && item.getBelongsTo() == curPlayer) {
                             curUnits--;
                             boardFrame.setUnitsLeft(curUnits);
                             item.setArmy(item.getArmy() + 1);
                             lastPickedTerritory = name;
                             if (curUnits <= 0) {
+                                pickNPCReinforcements();
                                 startAttackPhase();
                             }
                         } else if (gamePhase == Phase.Conquest && item.getBelongsTo() == curPlayer && item.getArmy() > 1) {
@@ -168,15 +172,15 @@ public class GameBoard {
                 if (item == null) return;
 
 
-                if(gamePhase == Phase.Conquest) {
+                if (gamePhase == Phase.Conquest) {
                     //Draw Arrow to attacking territory
-                    if(item.getIsSelected() && item.getBelongsTo() != curPlayer) {
+                    if (item.getIsSelected() && item.getBelongsTo() != curPlayer) {
                         Territory t = territories.get(lastPickedTerritory);
                         boardFrame.arrowFrom = t.getCapital();
                         boardFrame.arrowTo = item.getCapital();
                         boardFrame.drawArrow = true;
                         item.setIsHovered(true);
-                    } else if(item.getArmy() > 1 && item.getBelongsTo() == curPlayer) {
+                    } else if (item.getArmy() > 1 && item.getBelongsTo() == curPlayer) {
                         item.setIsHovered(true);
                     }
                 } else {
@@ -188,7 +192,7 @@ public class GameBoard {
 
         boardFrame.nextRoundBtn.addActionListener(e -> {
             JButton b = (JButton) e.getSource();
-            if(b.isEnabled() && gamePhase == Phase.Conquest && curPlayer == Player.Human) {
+            if (b.isEnabled() && gamePhase == Phase.Conquest && curPlayer == Player.Human) {
                 curPlayer = Player.Bot;
                 deselectTerritory(lastPickedTerritory);
                 nextRound();
@@ -198,18 +202,18 @@ public class GameBoard {
 
     private void selectNeighbors(Territory t) {
         Territory neighbor;
-        for(String s : t.getNeighbors()) {
+        for (String s : t.getNeighbors()) {
             neighbor = territories.get(s);
-            if(neighbor.getBelongsTo() != curPlayer) {
+            if (neighbor.getBelongsTo() != curPlayer) {
                 neighbor.setIsSelected(true);
             }
         }
     }
 
     private void deselectTerritory(String name) {
-        if(name != null) {
+        if (name != null) {
             Territory t = territories.get(name);
-            if(t != null) {
+            if (t != null) {
                 t.setIsSelected(false);
                 Territory neighbor;
                 for (String s : t.getNeighbors()) {
@@ -223,7 +227,7 @@ public class GameBoard {
     private void chooseRandomStartingPlayer() {
         Random r = new Random();
         int player = r.nextInt(2);
-        if(player == 0) {
+        if (player == 0) {
             curPlayer = Player.Human;
         } else {
             curPlayer = Player.Bot;
@@ -232,13 +236,13 @@ public class GameBoard {
 
     private void pickNPCTerritory() {
         String name;
-        if(lastPickedContinent == null) {
+        if (lastPickedContinent == null) {
             //Bot starts to choose
             name = getRandomFreeTerritory();
         } else {
             name = getRandomFreeTerritoryFromContinent(lastPickedContinent);
         }
-        if(name != null) {
+        if (name != null) {
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @Override
@@ -263,8 +267,8 @@ public class GameBoard {
     }
 
     private Continent getContinentFromTerritory(String terrName) {
-        for(Continent c : continents.values()) {
-            if(c.containsTerritory(terrName)) {
+        for (Continent c : continents.values()) {
+            if (c.containsTerritory(terrName)) {
                 return c;
             }
         }
@@ -273,13 +277,13 @@ public class GameBoard {
 
     private String getRandomFreeTerritory() {
         ArrayList<String> territoryNames = new ArrayList<>();
-        for(String s : territories.keySet()) {
+        for (String s : territories.keySet()) {
             territoryNames.add(s);
         }
         Collections.shuffle(territoryNames);
-        for(String st : territoryNames) {
+        for (String st : territoryNames) {
             Territory t = territories.get(st);
-            if(t.getArmy() == 0) {
+            if (t.getArmy() == 0) {
                 return st;
             }
         }
@@ -289,9 +293,9 @@ public class GameBoard {
     private String getRandomFreeTerritoryFromContinent(Continent c) {
         ArrayList<String> territoryList = c.getTerritories();
         Collections.shuffle(territoryList);
-        for(String terrName : territoryList) {
+        for (String terrName : territoryList) {
             Territory item = territories.get(terrName);
-            if(item.getArmy() == 0) {
+            if (item.getArmy() == 0) {
                 return terrName;
             }
         }
@@ -300,8 +304,8 @@ public class GameBoard {
     }
 
     private void checkIfSetupEnded() {
-        for(Territory t : territories.values()) {
-            if(t.getArmy() == 0) {
+        for (Territory t : territories.values()) {
+            if (t.getArmy() == 0) {
                 return;
             }
         }
@@ -312,10 +316,10 @@ public class GameBoard {
 
     private boolean checkIfGameEnded() {
         Player belongsTo = null;
-        for(Territory t : territories.values()) {
-            if(belongsTo == null) {
+        for (Territory t : territories.values()) {
+            if (belongsTo == null) {
                 belongsTo = t.getBelongsTo();
-            } else if(belongsTo != t.getBelongsTo()) {
+            } else if (belongsTo != t.getBelongsTo()) {
                 return false;
             }
         }
@@ -324,12 +328,10 @@ public class GameBoard {
 
     private void nextRound() {
         gamePhase = Phase.Reinforce;
+        curPlayer = Player.Human;
         boardFrame.setCurrentPhase("Conquest - Reinforce!");
         curUnits = calculateReinforcements();
         boardFrame.setUnitsLeft(curUnits);
-        if(curPlayer == Player.Bot) {
-            pickNPCReinforcements();
-        }
     }
 
     private void startAttackPhase() {
@@ -341,17 +343,17 @@ public class GameBoard {
         int countUnits = 0;
         int countTerritories = 0;
         boolean hasAll;
-        for(Continent c : continents.values()) {
+        for (Continent c : continents.values()) {
             hasAll = true;
-            for(String terrName : c.getTerritories()) {
+            for (String terrName : c.getTerritories()) {
                 Territory t = territories.get(terrName);
-                if(t.getBelongsTo() != curPlayer) {
+                if (t.getBelongsTo() != curPlayer) {
                     hasAll = false;
                 } else {
                     countTerritories++;
                 }
             }
-            if(hasAll) {
+            if (hasAll) {
                 countUnits += c.getReinforcements();
             }
         }
@@ -360,8 +362,8 @@ public class GameBoard {
 
     //TODO: add more intelligence
     private void pickNPCReinforcements() {
-        for(Territory t : territories.values()) {
-            if(t.getBelongsTo() == Player.Bot) {
+        for (Territory t : territories.values()) {
+            if (t.getBelongsTo() == Player.Bot) {
                 t.setArmy(t.getArmy() + curUnits);
                 boardFrame.drawNew();
                 curPlayer = Player.Human;
@@ -376,7 +378,7 @@ public class GameBoard {
         String name;
 
         name = getRandomFreeTerritory();
-        if(name != null) {
+        if (name != null) {
             Territory item = territories.get(name);
             item.setArmy(1);
             item.setBelongsTo(curPlayer);
@@ -384,19 +386,19 @@ public class GameBoard {
             hasselected = !hasselected;*/
             territories.put(name, item);
             boardFrame.setCurrentAction(boardFrame.getCurrentAction() + " - Opponent picked: " + name);
-            if(curPlayer == Player.Bot) {
+            if (curPlayer == Player.Bot) {
                 curPlayer = Player.Human;
             } else {
                 curPlayer = Player.Bot;
             }
         }
         boolean isFinished = true;
-        for(Territory t : territories.values()) {
-            if(t.getArmy() == 0) {
-               isFinished = false;
+        for (Territory t : territories.values()) {
+            if (t.getArmy() == 0) {
+                isFinished = false;
             }
         }
-        if(isFinished) {
+        if (isFinished) {
             checkIfSetupEnded();
         } else {
             autoFill();
