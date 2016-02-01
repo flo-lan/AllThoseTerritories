@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="837d168d-a42d-4cf3-9435-70753f639f91" name="Default" comment="workspace">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Patch.java" afterPath="" />
+    <list default="true" id="837d168d-a42d-4cf3-9435-70753f639f91" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/Continent.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/Continent.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$1.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$2.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard$2.class" />
@@ -14,12 +13,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/Territory.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/Territory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/main.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Continent.java" afterPath="$PROJECT_DIR$/src/Continent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameBoard.java" afterPath="$PROJECT_DIR$/src/GameBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameBoardFrame.java" afterPath="$PROJECT_DIR$/src/GameBoardFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MapLoader.java" afterPath="$PROJECT_DIR$/src/MapLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Territory.java" afterPath="$PROJECT_DIR$/src/Territory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
     </list>
     <ignored path="AllThoseTerritories.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -623,7 +616,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453995344641</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="small changes">
+      <created>1454294724846</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1454294724846</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -671,7 +670,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
+    <MESSAGE value="small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
