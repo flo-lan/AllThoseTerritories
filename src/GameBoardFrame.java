@@ -30,7 +30,7 @@ public class GameBoardFrame extends JFrame {
         super("All Those Territories - © Langeder, Mauracher 2016");
 
         for (Territory item : GameBoard.territories)
-            item.AddPropertyChangeListener(evt -> drawNew());
+            item.AddPropertyChangeListener(evt -> SwingUtilities.invokeLater(() -> mainPanel.repaint()));
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
@@ -104,10 +104,6 @@ public class GameBoardFrame extends JFrame {
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
         getContentPane().add(mainPanel);
         setVisible(true);
-    }
-
-    public void drawNew() {
-        SwingUtilities.invokeLater(() -> mainPanel.repaint());
     }
 
     private void drawArrow(Graphics2D g2, Point to, Point from, Color color) {

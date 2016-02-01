@@ -133,6 +133,9 @@ public class GameBoard {
                         selectNeighbors(item);
                         lastPickedTerritory = item;
                     }
+                    else if(currentPhase == Phase.Conquest && item.getBelongsTo() != curPlayer && lastPickedTerritory.getArmy() > 1) {
+                        lastPickedTerritory.Attack(item);
+                    }
                     //END GAMELOGIC
                 }
             }
@@ -179,13 +182,13 @@ public class GameBoard {
 
     private void selectNeighbors(Territory item) {
         if(item == null) return;
-        item.getNeighbors().parallelStream().filter(s -> curPlayer != s.getBelongsTo()).forEach(s -> s.setIsSelected(true));
+        item.getNeighbors().stream().filter(s -> curPlayer != s.getBelongsTo()).forEach(s -> s.setIsSelected(true));
     }
 
     private void deselectTerritory(Territory item) {
         if(item == null) return;
         item.setIsSelected(false);
-        item.getNeighbors().parallelStream().forEach(s -> s.setIsSelected(false));
+        item.getNeighbors().stream().forEach(s -> s.setIsSelected(false));
     }
 
     private void pickNPCTerritory() {
@@ -205,17 +208,8 @@ public class GameBoard {
                         checkIfSetupEnded();
                     }
                 },
-                500
+                0
         );
-    }
-
-    private Continent getContinentFromTerritory(Territory terr) {
-        for(Continent c : continents) {
-            if(c.containsTerritory(terr)) {
-                return c;
-            }
-        }
-        return null;
     }
 
     private Territory getRandomFreeTerritory() {
@@ -301,15 +295,35 @@ public class GameBoard {
     //TODO: add more intelligence
     private void pickNPCReinforcements() {
         int units = calculateReinforcements();
+        int restunits = units;
+        double maxreinforce = 0;
+        int count = 0;
         for(Territory t : territories) {
             if(t.getBelongsTo() == Player.Bot) {
-                if(units == 0) continue;
-                t.setArmy(t.getArmy() + 1);
-                units --;
-                boardFrame.drawNew();
+                double index = t.getReinforceIndex(units);
+                if(maxreinforce < index) {
+                    maxreinforce = index;
+                    count = 1;
+                }
+                else if(maxreinforce == index) {
+                    count++;
+                }
             }
         }
-        boardFrame.drawNew();
+
+        for(Territory t : territories) {
+            if(t.getBelongsTo() == Player.Bot) {
+                double index = t.getReinforceIndex(units);
+                if(maxreinforce == index) {
+                    t.setArmy(t.getArmy() + (restunits / count));
+                    restunits = restunits - (restunits / count);
+                    count--;
+                    if(count == 0)
+                        t.setArmy(t.getArmy() + restunits);
+                }
+            }
+        }
+
         curPlayer = Player.Human;
         nextPhase();
     }

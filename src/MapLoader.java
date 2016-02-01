@@ -100,11 +100,17 @@ public class MapLoader {
         if(terr.isPresent())
         {
             Territory currentterr = terr.get();
-            list.forEach(currentterr::addNeighbor);
+
+            list.forEach(item -> {
+                currentterr.addNeighbor(item);
+                item.addNeighbor(currentterr);
+            });
+
             for(String item : territoryList)
             {
                 Territory newitem = new Territory(item);
                 territories.add(newitem);
+                newitem.addNeighbor(currentterr);
                 currentterr.addNeighbor(newitem);
             }
         }

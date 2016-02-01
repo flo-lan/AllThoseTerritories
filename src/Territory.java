@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Territory extends BaseClass {
@@ -50,20 +52,53 @@ public class Territory extends BaseClass {
         return mycolor;
     }
 
-    public int getReinforceIndex() {
-        int ownNei = 0;
-        int othNei = 0;
+    public double getReinforceIndex(int Army) {
+        double weakNei = 0;
+        double strongNei = 0;
 
         for (Territory item : _neighbors) {
-            if (item.getIsHovered() == _isHovered)
-                ownNei++;
-            else
-                othNei++;
+            if (item.getIsHovered() != _isHovered) {
+                if (item.getArmy() < _army + Army)
+                    weakNei++;
+                else
+                    strongNei++;
+            }
         }
 
-        if (othNei == 0) return 0;
+        weakNei = weakNei / (double) _neighbors.size();
+        strongNei = strongNei / (double) _neighbors.size();
 
-        return ownNei;
+        if (weakNei + strongNei == 0) return 0;
+
+        return weakNei + (strongNei * 0.5);
+    }
+
+    public void Attack(Territory item) {
+        for (int i = 0; i < 3; i++) {
+            if(_army == 1) return;
+
+            Random ran = new Random();
+            List<Integer> attacknumbers = new ArrayList<>();
+            List<Integer> defensenumbers = new ArrayList<>();
+
+            for (int i2 = 1; i2 <= _army && i2 <= 3; i2++)
+                attacknumbers.add(ran.nextInt(6) + 1);
+
+            for (int i2 = 1; i2 <= item.getArmy() && i2 <= 2; i2++)
+                defensenumbers.add(ran.nextInt(6) + 1);
+
+            if (Collections.max(attacknumbers) >= Collections.max(defensenumbers)) {
+                item.setArmy(item.getArmy() - 1);
+            } else {
+                setArmy(getArmy() - 1);
+            }
+
+            if (item.getArmy() == 0) {
+                item.setBelongsTo(getBelongsTo());
+                item.setArmy(_army - i);
+                setArmy(3 - i);
+            }
+        }
     }
 
     //END METHODS
