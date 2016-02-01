@@ -1,18 +1,20 @@
-import javafx.scene.shape.Line;
+import javafx.scene.shape.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Color;
+import java.awt.Polygon;
 import java.awt.geom.Line2D;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class GameBoardFrame extends JFrame {
 
     private final static Color bgcolor = new Color(0, 41, 58);
     private final static Color linecolor = new Color(170, 132, 57);
 
-    private ArrayList<TerritoryPolygon> polygonList = new ArrayList<>();
-    private ArrayList<Line> lineList = new ArrayList<>();
+    private List<Line> lineList = new ArrayList<>();
+
     private String CurrentAction = "";
     private String currentPhase = "Setup";
     private String unitsLeft = "";
@@ -26,6 +28,10 @@ public class GameBoardFrame extends JFrame {
 
     public GameBoardFrame() {
         super("All Those Territories - © Langeder, Mauracher 2016");
+
+        for (Territory item : GameBoard.territories)
+            item.AddPropertyChangeListener(evt -> drawNew());
+
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
@@ -39,57 +45,49 @@ public class GameBoardFrame extends JFrame {
                 super.paintComponent(g);
 
                 Graphics2D g2 = (Graphics2D) g; //Needed for Antialiasing
-                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-                        RenderingHints.VALUE_ANTIALIAS_ON);
-                g2.setStroke(new BasicStroke(5.5f,
-                        BasicStroke.CAP_ROUND,
-                        BasicStroke.JOIN_ROUND));
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setStroke(new BasicStroke(5.5f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 
                 g2.setColor(linecolor);
-                for (Line line : lineList) {
-                    g2.drawLine((int) line.getStartX(), (int) line.getStartY(), (int) line.getEndX(), (int) line.getEndY());
-                }
+                lineList.parallelStream().forEach(e -> g2.drawLine((int) e.getStartX(), (int) e.getStartY(), (int) e.getEndX(), (int) e.getEndY()));
+
+                List<Territory> NotSelectedTerritories = GameBoard.territories.parallelStream().filter(e -> e.getIsHovered() == false).collect(Collectors.toList());
+                List<Territory> SelectedTerritories = GameBoard.territories.parallelStream().filter(e -> e.getIsHovered()).collect(Collectors.toList());
 
                 //DRAW NOT HIGHLIGHTED SECTIONS
-                for (TerritoryPolygon pol : polygonList) {
-                    Territory current = GameBoard.territories.get(pol.getName());
-                    if (current == null || current.getIsHovered()) continue;
-
+                NotSelectedTerritories.stream().forEach(e -> {
                     g2.setStroke(new BasicStroke(5f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-
-                    g2.setColor(Color.DARK_GRAY);
-                    g2.drawPolygon(pol);
-                    g2.setColor(current.getColor());
-                    g2.fillPolygon(pol);
-
+                    e.getPatches().stream().forEach(pol -> {
+                        g2.setColor(Color.DARK_GRAY);
+                        g2.drawPolygon(pol);
+                        g2.setColor(e.getColor());
+                        g2.fillPolygon(pol);
+                    });
                     g2.setColor(Color.GREEN);
-                    g2.drawString(String.valueOf(current.getArmy()), current.getCapital().x, current.getCapital().y);
-                }
+                    g2.drawString(String.valueOf(e.getArmy()), e.getCapital().x, e.getCapital().y);
+                });
 
                 //DRAW HIGHLIGHTED SECTIONS
-                for (TerritoryPolygon pol : polygonList) {
-                    Territory current = GameBoard.territories.get(pol.getName());
-                    if (current == null || !current.getIsHovered()) continue;
-
+                SelectedTerritories.stream().forEach(e -> {
                     g2.setStroke(new BasicStroke(5f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-
-                    g2.setColor(Color.ORANGE);
-                    g2.drawPolygon(pol);
-                    g2.setColor(current.getColor());
-                    g2.fillPolygon(pol);
-
+                    e.getPatches().stream().forEach(pol -> {
+                        g2.setColor(Color.ORANGE);
+                        g2.drawPolygon(pol);
+                        g2.setColor(e.getColor());
+                        g2.fillPolygon(pol);
+                    });
                     g2.setColor(Color.GREEN);
-                    g2.drawString(String.valueOf(current.getArmy()), current.getCapital().x, current.getCapital().y);
-                }
+                    g2.drawString(String.valueOf(e.getArmy()), e.getCapital().x, e.getCapital().y);
+                });
 
-                if(drawArrow) {
+                if (drawArrow) {
                     drawArrow(g2, arrowTo, arrowFrom, Color.black);
                 }
 
                 g2.setColor(Color.GREEN);
                 g2.drawString(getCurrentAction(), 625, 610);
                 g2.drawString("Current Phase: " + currentPhase, 5, 15);
-                if(!unitsLeft.equals("") && !unitsLeft.equals("0"))
+                if (!unitsLeft.equals("") && !unitsLeft.equals("0"))
                     g2.drawString("Units left: " + unitsLeft, 5, 30);
 
             }
@@ -112,8 +110,7 @@ public class GameBoardFrame extends JFrame {
         SwingUtilities.invokeLater(() -> mainPanel.repaint());
     }
 
-    private void drawArrow(Graphics2D g2, Point to, Point from, Color color)
-    {
+    private void drawArrow(Graphics2D g2, Point to, Point from, Color color) {
         g2.setPaint(color);
         Line2D l = new Line2D.Double(from.getX(), from.getY(), to.getX(), to.getY());
         g2.draw(l);
@@ -125,38 +122,26 @@ public class GameBoardFrame extends JFrame {
         double theta = Math.atan2(dy, dx);
 
         double x, y, rho = theta + phi;
-        for(int j = 0; j < 2; j++)
-        {
+        for (int j = 0; j < 2; j++) {
             x = to.x - barb * Math.cos(rho);
             y = to.y - barb * Math.sin(rho);
             g2.draw(new Line2D.Double(to.x, to.y, x, y));
             rho = theta - phi;
         }
     }
-    public void addPolygons(ArrayList<ArrayList<Point>> points, String name) {
-        for (ArrayList<Point> pointList : points) {
-            addPolygon(pointList, name);
-        }
-    }
-
-    private void addPolygon(ArrayList<Point> points, String name) {
-        TerritoryPolygon poly = new TerritoryPolygon(name);
-        for (Point p : points) {
-            poly.addPoint((int) (p.getX()), (int) p.getY());
-        }
-        polygonList.add(poly);
-    }
 
     public void addLine(Point from, Point to) {
         lineList.add(new Line(from.x, from.y, to.x, to.y));
     }
 
-    public String getClickedTerritory(int x, int y) {
-        for (TerritoryPolygon pol : polygonList)
-            if (pol.contains(x, y)) {
-                drawNew();
-                return pol.getName();
+    public Territory getClickedTerritory(int x, int y) {
+        for (Territory terr : GameBoard.territories) {
+            for (Polygon pol : terr.getPatches()) {
+                if (pol.contains(x, y)) {
+                    return terr;
+                }
             }
+        }
 
         return null;
     }
@@ -176,16 +161,4 @@ public class GameBoardFrame extends JFrame {
     public void setUnitsLeft(int value) {
         unitsLeft = String.valueOf(value);
     }
-}
-
-class TerritoryPolygon extends Polygon {
-
-    private String name;
-
-    public TerritoryPolygon(String name) {
-        super();
-        this.name = name;
-    }
-
-    public String getName() { return name; }
 }

@@ -1,36 +1,41 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class Continent {
 
-    private ArrayList<String> territories;
-    private int reinforcements;
+    private List<Territory> _territories;
+    private int _reinforcements;
+    private String _name;
 
-    public Continent(ArrayList<String> territories, int reinforcements) {
-        this.territories = territories;
-        this.reinforcements = reinforcements;
+    public Continent(String Name, List<Territory> Territories, int Reinforcements) {
+        _territories = Territories;
+        _reinforcements = Reinforcements;
+        _name = Name;
     }
 
-    public ArrayList<String> getTerritories() {
-        return territories;
+    public Continent(List<Territory> Territories, int Reinforcements) {
+        _territories = Territories;
+        _reinforcements = Reinforcements;
+    }
+
+    public List<Territory> getTerritories() {
+        return _territories;
     }
 
     public int getReinforcements() {
-        return reinforcements;
+        return _reinforcements;
     }
 
-    public boolean containsTerritory(String terr) {
-        for(String s : territories) {
-            if(s.equals(terr)) return true;
-        }
-        return false;
+    public boolean containsTerritory(Territory terr) {
+        return _territories.parallelStream().anyMatch(e -> e.equals(terr));
     }
+
+    public boolean containsTerritory(String name) {
+        return _territories.parallelStream().anyMatch(e -> e.getName() == name);
+    }
+
+    public String getName() { return _name; }
 
     public String toString() {
-        String s = "";
-        s += "UnitBoost: " + reinforcements + "\n";
-        for(String t : territories) {
-            s += "Terr: " + t + "\n";
-        }
-        return s;
+        return _name + ", UnitBoost: " + _reinforcements + "\n";
     }
 }

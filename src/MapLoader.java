@@ -1,26 +1,27 @@
 import java.awt.*;
-import java.awt.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class MapLoader {
 
-    private HashMap<String, Territory> territories = new HashMap<>();
-    private HashMap<String, Continent> continents = new HashMap<>();
+    private List<Territory> territories = new ArrayList<>();
+    private List<Continent> continents = new ArrayList<>();
 
     public MapLoader(String mapFile) {
         readFile(mapFile);
     }
 
-    public HashMap<String, Territory> getTerritories() {
+    public List<Territory> getTerritories() {
         return territories;
     }
 
-    public HashMap<String, Continent> getContinents() {
+    public List<Continent> getContinents() {
         return continents;
     }
 
@@ -39,9 +40,7 @@ public class MapLoader {
     }
 
     private void readMapLine(String line) {
-        //Split by whitespace, but only first appearance
         String[] stringData = line.split(" ", 2);
-
         switch (stringData[0]) {
             case "patch-of":
                 addPatch(stringData[1]);
@@ -61,56 +60,64 @@ public class MapLoader {
 
     public void addPatch(String patchData) {
         String terrName = getAffectedRegion(patchData);
-        ArrayList<Point> coordinates = getCoordinates(patchData);
+        List<Point> coordinates = getCoordinates(patchData);
 
-        Territory terr;
+        Polygon item = new Polygon();
+        coordinates.forEach((e) -> item.addPoint(e.x, e.y));
 
-        //Territory already exists
-        if(territories.containsKey(terrName)) {
-            terr = territories.get(terrName);
-            terr.addPatch(coordinates);
+        Optional<Territory> terr = territories.stream().filter(e -> e.getName().equals(terrName)).findFirst();
+
+        if(terr.isPresent()) {
+            terr.get().addPatch(item);
         } else {
-            terr = new Territory();
-            terr.addPatch(coordinates);
-            territories.put(terrName, terr);
+            Territory te = new Territory(terrName);
+            te.addPatch(item);
+            territories.add(te);
         }
     }
 
     public void addCapital(String capitalData) {
         String terrName = getAffectedRegion(capitalData);
-        ArrayList<Point> coordinates = getCoordinates(capitalData);
+        List<Point> coordinates = getCoordinates(capitalData);
 
-        Territory terr;
+        Optional<Territory> terr = territories.stream().filter(e -> e.getName().equals(terrName)).findFirst();
 
-        //Territory already exists
-        if(territories.containsKey(terrName)) {
-            terr = territories.get(terrName);
-            terr.setCapital(coordinates.get(0));
-
+        if(terr.isPresent()) {
+            terr.get().setCapital(coordinates.get(0));
         } else {
-            terr = new Territory();
-            terr.setCapital(coordinates.get(0));
-            territories.put(terrName, terr);
+            Territory item = new Territory(terrName, coordinates.get(0));
+            territories.add(item);
         }
     }
 
     public void addNeighbors(String neighborData) {
         String terrName = getAffectedRegion(neighborData);
-        ArrayList<String> territoryList = getTerritoryList(neighborData);
-        Territory terr = territories.get(terrName);
-        Territory neighbor;
-        for(String s : territoryList) {
-            terr.addNeighbor(s);
-            neighbor = territories.get(s);
-            neighbor.addNeighbor(terrName);
+        List<String> territoryList = getTerritoryList(neighborData);
+
+        Optional<Territory> terr = territories.stream().filter(e -> e.getName().equals(terrName)).findFirst();
+        List<Territory> list = territories.stream().filter(e -> territoryList.remove(e.getName())).collect(Collectors.toList());
+
+        if(terr.isPresent())
+        {
+            Territory currentterr = terr.get();
+            list.forEach(currentterr::addNeighbor);
+            for(String item : territoryList)
+            {
+                Territory newitem = new Territory(item);
+                territories.add(newitem);
+                currentterr.addNeighbor(newitem);
+            }
         }
     }
 
     public void addContinent(String continentData) {
-        String continentName = getAffectedRegion(continentData);
-        int reinforcements = getContinentReinforcements(continentData);
-        ArrayList<String> territoryList = getTerritoryList(continentData);
-        continents.put(continentName, new Continent(territoryList, reinforcements));
+        List<String> territoryList = getTerritoryList(continentData);
+        List<Territory> list = territories.stream().filter(e -> territoryList.remove(e.getName())).collect(Collectors.toList());
+        list.addAll(territoryList.stream().map(Territory::new).collect(Collectors.toList()));
+
+        Continent con = new Continent(getAffectedRegion(continentData), list, getContinentReinforcements(continentData));
+        list.stream().forEach(e -> e.setContinent(con));
+        continents.add(con);
     }
 
     public int getContinentReinforcements(String line) {
@@ -123,7 +130,7 @@ public class MapLoader {
         return 0;
     }
 
-    public ArrayList<String> getTerritoryList(String line) {
+    public List<String> getTerritoryList(String line) {
         String[] stringData = line.split(" : ");
         stringData = stringData[1].split(" - ");
         return new ArrayList(Arrays.asList(stringData));
@@ -141,7 +148,7 @@ public class MapLoader {
         throw new IllegalArgumentException();
     }
 
-    public ArrayList<Point> getCoordinates(String line) {
+    public List<Point> getCoordinates(String line) {
         String[] stringData = line.split(" ");
 
         ArrayList<Point> coordinates = new ArrayList<>();
