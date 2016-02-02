@@ -12,7 +12,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/GameBoard.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AllThoseTerritories/Territory.class" afterPath="$PROJECT_DIR$/out/production/AllThoseTerritories/Territory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameBoard.java" afterPath="$PROJECT_DIR$/src/GameBoard.java" />
     </list>
     <ignored path="AllThoseTerritories.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -655,7 +654,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454426658960</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updates&#10;">
+      <created>1454430342986</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1454430342986</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -705,7 +710,8 @@
     <MESSAGE value="workspace" />
     <MESSAGE value="small changes" />
     <MESSAGE value="attackphase" />
-    <option name="LAST_COMMIT_MESSAGE" value="attackphase" />
+    <MESSAGE value="updates&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
