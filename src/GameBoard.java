@@ -98,8 +98,6 @@ public class GameBoard {
                     Territory item = boardFrame.getClickedTerritory(e.getX(), e.getY());
                     if (item == null || curPlayer != Player.Human) return;
 
-                    //GAMELOGIC
-
                     if (currentPhase == Phase.Setup && item.getBelongsTo() == Player.None) {
                         item.setArmy(1);
                         item.setBelongsTo(Player.Human);
@@ -134,10 +132,12 @@ public class GameBoard {
                         lastPickedTerritory = item;
                     }
                     else if(currentPhase == Phase.Conquest && item.getBelongsTo() != curPlayer && lastPickedTerritory.getArmy() > 1) {
-                        boardFrame.setCurrentPhase("Conquer - Attack & Move!\n" + lastPickedTerritory.Attack(item));
-
+                        boardFrame.setCurrentPhase("Conquer - Attack & Move! \n" + lastPickedTerritory.Attack(item));
+                        if (lastPickedTerritory.getArmy() == 1) {
+                            deselectTerritory(item);
+                            boardFrame.drawArrow = false;
+                        }
                     }
-                    //END GAMELOGIC
                 }
             }
         });
@@ -155,19 +155,15 @@ public class GameBoard {
                 Territory item = boardFrame.getClickedTerritory(e.getX(), e.getY());
                 if (item == null) return;
 
-                if(currentPhase == Phase.Conquest) {
+                if (currentPhase == Phase.Conquest) {
                     //Draw Arrow to attacking territory
-                    if(item.getIsSelected() && item.getBelongsTo() != curPlayer) {
+                    if (item.getIsSelected() && item.getBelongsTo() != curPlayer) {
                         boardFrame.arrowFrom = lastPickedTerritory.getCapital();
                         boardFrame.arrowTo = item.getCapital();
                         boardFrame.drawArrow = true;
-                        item.setIsHovered(true);
-                    } else if(item.getArmy() > 1 && item.getBelongsTo() == curPlayer) {
-                        item.setIsHovered(true);
                     }
-                } else {
-                    item.setIsHovered(true);
                 }
+                item.setIsHovered(true);
             }
         });
 
