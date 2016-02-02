@@ -134,7 +134,8 @@ public class GameBoard {
                         lastPickedTerritory = item;
                     }
                     else if(currentPhase == Phase.Conquest && item.getBelongsTo() != curPlayer && lastPickedTerritory.getArmy() > 1) {
-                        lastPickedTerritory.Attack(item);
+                        boardFrame.setCurrentPhase("Conquer - Attack & Move!\n" + lastPickedTerritory.Attack(item));
+
                     }
                     //END GAMELOGIC
                 }

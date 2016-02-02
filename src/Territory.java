@@ -73,31 +73,53 @@ public class Territory extends BaseClass {
         return weakNei + (strongNei * 0.5);
     }
 
-    public void Attack(Territory item) {
-        for (int i = 0; i < 3; i++) {
-            if(_army == 1) return;
+    public String Attack(Territory item) {
+        int defenseArmys = item.getArmy();
+        int attackArmys = getArmy();
+        if (defenseArmys > 2) {
+            defenseArmys = 2;
+            item.setArmy(defenseArmys - 2);
+        } else {
+            item.setArmy(0);
+        }
 
+        if (attackArmys > 4) {
+            attackArmys = 3;
+            setArmy(attackArmys - 3);
+        } else {
+            attackArmys--;
+            setArmy(1);
+        }
+
+        while (attackArmys > 0 && defenseArmys > 0) {
             Random ran = new Random();
             List<Integer> attacknumbers = new ArrayList<>();
             List<Integer> defensenumbers = new ArrayList<>();
 
-            for (int i2 = 1; i2 <= _army && i2 <= 3; i2++)
+            for (int i = 1; i <= attackArmys; i++)
                 attacknumbers.add(ran.nextInt(6) + 1);
-
-            for (int i2 = 1; i2 <= item.getArmy() && i2 <= 2; i2++)
+            for (int i = 1; i <= defenseArmys; i++)
                 defensenumbers.add(ran.nextInt(6) + 1);
 
-            if (Collections.max(attacknumbers) >= Collections.max(defensenumbers)) {
-                item.setArmy(item.getArmy() - 1);
+            if (Collections.max(attacknumbers) > Collections.max(defensenumbers)) {
+                defenseArmys--;
             } else {
-                setArmy(getArmy() - 1);
+                attackArmys--;
             }
+        }
 
-            if (item.getArmy() == 0) {
+        if (attackArmys == 0) {
+            item.setArmy(item.getArmy() + defenseArmys);
+            return getName() + " hat " + item.getName() + " angegriffen und verloren";
+        } else {
+            if(item.getArmy() > 0) {
+                setArmy(getArmy() + attackArmys);
+            } else {
+                item.setArmy(attackArmys);
                 item.setBelongsTo(getBelongsTo());
-                item.setArmy(_army - i);
-                setArmy(3 - i);
+                item.setIsSelected(false);
             }
+            return getName() + " hat " + item.getName() + " angegriffen und gewonnen";
         }
     }
 
