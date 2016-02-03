@@ -36,7 +36,6 @@ public class Territory extends BaseClass {
         _patches = new ArrayList<>();
     }
 
-    //METHODS
     public Color getColor() {
         if (_belongsTo == Player.None)
             return Color.GRAY;
@@ -70,7 +69,7 @@ public class Territory extends BaseClass {
 
         if (weakNei + strongNei == 0) return 0;
 
-        return weakNei + (strongNei * 0.5);
+        return (weakNei * 0.5) + strongNei;
     }
 
     public String Attack(Territory item) {
@@ -78,14 +77,14 @@ public class Territory extends BaseClass {
         int attackArmys = getArmy();
         if (defenseArmys > 2) {
             defenseArmys = 2;
-            item.setArmy(defenseArmys - 2);
+            item.setArmy(item.getArmy() - 2);
         } else {
             item.setArmy(0);
         }
 
-        if (attackArmys > 4) {
+        if (attackArmys > 3) {
             attackArmys = 3;
-            setArmy(attackArmys - 3);
+            setArmy(getArmy() - 3);
         } else {
             attackArmys--;
             setArmy(1);
@@ -123,9 +122,6 @@ public class Territory extends BaseClass {
         }
     }
 
-    //END METHODS
-
-    //GET / SET
     public String getName() {
         return _name;
     }
@@ -134,6 +130,7 @@ public class Territory extends BaseClass {
     }
 
     public void setArmy(int get) {
+        if(get == _army) return;
         int oldvalue = _army;
         _army = get;
         RaisePropertyChanged("Army", get, oldvalue);
@@ -143,16 +140,11 @@ public class Territory extends BaseClass {
         return _continent;
     }
     public void setContinent(Continent get) {
-        Continent oldvalue = _continent;
         _continent = get;
-        RaisePropertyChanged("Continent", get, oldvalue);
     }
 
     public void addPatch(Polygon p) {
         _patches.add(p);
-    }
-    public void addPatches(List<Polygon> p) {
-        _patches.addAll(p.parallelStream().collect(Collectors.toList()));
     }
     public List<Polygon> getPatches() {
         return _patches;
@@ -166,16 +158,14 @@ public class Territory extends BaseClass {
     }
 
     public void setCapital(Point get) {
-        Point oldvalue = _capital;
         _capital = get;
-        RaisePropertyChanged("Capital", get, oldvalue);
-
     }
     public Point getCapital() {
         return _capital;
     }
 
     public void setBelongsTo(Player get) {
+        if(get == _belongsTo) return;
         Player oldvalue = _belongsTo;
         _belongsTo = get;
         RaisePropertyChanged("BelongsTo", get, oldvalue);
@@ -185,6 +175,7 @@ public class Territory extends BaseClass {
     }
 
     public void setIsHovered(boolean get) {
+        if(get == _isHovered) return;
         boolean oldvalue = _isHovered;
         _isHovered = get;
         RaisePropertyChanged("IsHovered", get, oldvalue);
@@ -194,15 +185,11 @@ public class Territory extends BaseClass {
     }
 
     public void setIsSelected(boolean get) {
+        if(get == _isSelected) return;
         boolean oldvalue = _isSelected;
         _isSelected = get;
         RaisePropertyChanged("IsSelected", get, oldvalue);
     }
-    public boolean getIsSelected() {
-        return _isSelected;
-    }
-
-    //END GET / SET
 
     public boolean equals(Object o) {
         if (o == null) return false;

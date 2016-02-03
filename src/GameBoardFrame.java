@@ -49,7 +49,7 @@ public class GameBoardFrame extends JFrame {
                 g2.setStroke(new BasicStroke(5.5f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 
                 g2.setColor(linecolor);
-                lineList.parallelStream().forEach(e -> g2.drawLine((int) e.getStartX(), (int) e.getStartY(), (int) e.getEndX(), (int) e.getEndY()));
+                lineList.stream().forEach(e -> g2.drawLine((int) e.getStartX(), (int) e.getStartY(), (int) e.getEndX(), (int) e.getEndY()));
 
                 List<Territory> NotSelectedTerritories = GameBoard.territories.parallelStream().filter(e -> e.getIsHovered() == false).collect(Collectors.toList());
                 List<Territory> SelectedTerritories = GameBoard.territories.parallelStream().filter(e -> e.getIsHovered()).collect(Collectors.toList());
@@ -80,12 +80,12 @@ public class GameBoardFrame extends JFrame {
                     g2.drawString(String.valueOf(e.getArmy()), e.getCapital().x, e.getCapital().y);
                 });
 
-                if (drawArrow) {
+                if (false) {
                     drawArrow(g2, arrowTo, arrowFrom, Color.black);
                 }
 
                 g2.setColor(Color.GREEN);
-                g2.drawString(getCurrentAction(), 625, 610);
+                g2.drawString(CurrentAction, 625, 610);
                 g2.drawString("Current Phase: " + currentPhase, 5, 15);
                 if (!unitsLeft.equals("") && !unitsLeft.equals("0"))
                     g2.drawString("Units left: " + unitsLeft, 5, 30);
@@ -133,12 +133,9 @@ public class GameBoardFrame extends JFrame {
     public Territory getClickedTerritory(int x, int y) {
         for (Territory terr : GameBoard.territories) {
             for (Polygon pol : terr.getPatches()) {
-                if (pol.contains(x, y)) {
-                    return terr;
-                }
+                if (pol.contains(x, y)) return terr;
             }
         }
-
         return null;
     }
 
@@ -148,13 +145,16 @@ public class GameBoardFrame extends JFrame {
 
     public void setCurrentAction(String value) {
         CurrentAction = value;
+        SwingUtilities.invokeLater(() -> mainPanel.repaint());
     }
 
     public void setCurrentPhase(String value) {
         currentPhase = value;
+        SwingUtilities.invokeLater(() -> mainPanel.repaint());
     }
 
     public void setUnitsLeft(int value) {
         unitsLeft = String.valueOf(value);
+        SwingUtilities.invokeLater(() -> mainPanel.repaint());
     }
 }
